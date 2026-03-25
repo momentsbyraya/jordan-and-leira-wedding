@@ -22,12 +22,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bfa094;
+  background: #AAB7C4;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a18072;
+  background: #0B1F3A;
 }
 
 /* Print styles */
@@ -45,16 +45,16 @@
 :root {
   --envelope-x: 300px;
   --envelope-y: 200px;
-  --envelope-bg: #800000;
-  --envelope-shadow: #660000;
-  --heart-bg: darkred;
+  --envelope-bg: #CC5500;
+  --envelope-shadow: #A84400;
+  --heart-bg: #CC5500;
   --heart-text: white;
   --letter-font: "Dancing Script", serif;
   --letter-x: 250px;
   --letter-y: calc(250px - 1rem - 10px);
-  --letter-bg: AntiqueWhite;
-  --letter-shadow: BurlyWood;
-  --letter-text: #180d07;
+  --letter-bg: #FDF6F0;
+  --letter-shadow: #AAB7C4;
+  --letter-text: #0B1F3A;
 }
 
 @media (min-width: 650px) {

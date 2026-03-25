@@ -3,8 +3,11 @@ import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
 import { X } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
+import { couple } from '../data'
 
 const RSVPModal = ({ isOpen, onClose }) => {
+  const rsvp = couple.rsvp
+  const deadlineNote = rsvp?.message ?? 'Please RSVP by May 30, 2026'
   const modalRef = useRef(null)
   const overlayRef = useRef(null)
   const contentRef = useRef(null)
@@ -79,24 +82,26 @@ const RSVPModal = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-300/50">
-          <h2 className="text-2xl font-leckerli font-light text-gray-900/70">RSVP</h2>
+          <h2 className="text-2xl font-leckerli font-light text-[#0B1F3A]/70">RSVP</h2>
           <button
             onClick={handleClose}
-            className="p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-200/50 rounded-full transition-colors duration-200"
+            className="p-2 text-[#5A6B7C] hover:text-[#0B1F3A] hover:bg-gray-200/50 rounded-full transition-colors duration-200"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
         
         {/* Content */}
-        <div className="p-6">
-          <div className="w-full h-[600px] overflow-hidden rounded-lg">
-            <iframe
-              src="https://forms.gle/V1hYqW3P9KtUJdsGA"
-              title="RSVP Form"
-              className="w-full h-full border-0"
-              style={{ minHeight: '600px' }}
-            />
+        <div className="p-6 pt-2">
+          {deadlineNote && (
+            <p className="text-center text-sm sm:text-base text-[#5A6B7C] mb-4 font-poppins">
+              {deadlineNote}
+            </p>
+          )}
+          <div className="flex min-h-[280px] sm:min-h-[360px] w-full items-center justify-center rounded-lg border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/80 px-6 py-16">
+            <p className="text-center font-tebranos text-2xl sm:text-3xl tracking-wide text-[#0B1F3A]/80">
+              TO BE ADDED
+            </p>
           </div>
         </div>
       </div>

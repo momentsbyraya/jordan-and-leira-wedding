@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
-import { themeConfig } from '../config/themeConfig'
 import { couple } from '../data'
 import Counter from './Counter'
 import { getTimeUntilWedding } from '../utils/countdown'
@@ -190,7 +189,7 @@ const NavIndex = ({ onOpenRSVP }) => {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-gray-50 overflow-hidden relative">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#0B1F3A] overflow-hidden relative">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-no-repeat nav-index-bg" />
       
@@ -250,13 +249,13 @@ const NavIndex = ({ onOpenRSVP }) => {
               <div className="rounded-[50%] w-full h-full flex flex-col items-center justify-center relative oval-border">
                 {/* Text Content */}
                 <div className="text-center px-4">
-                  <p className="nanum-myeongjo-regular text-[#333333] mb-2 oval-text-for">
+                  <p className="nanum-myeongjo-regular text-[#0B1F3A] mb-2 oval-text-for">
                     FOR THE
                   </p>
                   <p className="imperial-script-regular mb-4 underline oval-text-entourage">
                     Entourage
                   </p>
-                  <p className="nanum-myeongjo-regular text-[#333333] oval-text-click">
+                  <p className="nanum-myeongjo-regular text-[#0B1F3A] oval-text-click">
                     CLICK HERE
                   </p>
                 </div>
@@ -298,10 +297,10 @@ const NavIndex = ({ onOpenRSVP }) => {
             {/* Polaroid-style Image Container */}
             <div 
               ref={polaroidRef}
-              className="bg-white relative polaroid-container"
+              className="bg-[#FDF6F0] relative polaroid-container"
             >
               <img 
-                src="/assets/images/prenup/prenup-5.jpg" 
+                src="/assets/images/prenup/HAN_1994 copy.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-image"
               />
@@ -320,7 +319,7 @@ const NavIndex = ({ onOpenRSVP }) => {
         <div className="flex justify-start items-start gap-6 relative rsvp-details-container">
           <div 
             ref={rsvpContainerRef}
-            className="bg-white flex flex-col cursor-pointer transition-transform duration-300 relative rsvp-container"
+            className="bg-[#FDF6F0] flex flex-col cursor-pointer transition-transform duration-300 relative rsvp-container"
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'rotate(-10deg) scale(1.05)'
             }}
@@ -339,17 +338,8 @@ const NavIndex = ({ onOpenRSVP }) => {
               }
             }}
           >
-            {/* Prenup Photo - 30% of container height */}
-            <div className="w-full overflow-hidden rsvp-photo-container">
-              <img 
-                src="/assets/images/prenup/prenup-6.jpg" 
-                alt="Prenup photo" 
-                className="w-full h-full object-cover rsvp-photo"
-              />
-            </div>
-            
-            {/* Kindly RSVP Text */}
-            <div className="flex-1 flex flex-col items-center justify-center px-4 py-4">
+            {/* Kindly RSVP Text — top / center of card */}
+            <div className="rsvp-text-section flex flex-1 flex-col items-center justify-center px-4 py-6 min-h-0">
               <p className="nanum-myeongjo-regular text-center uppercase rsvp-text-kindly">
                 Kindly
               </p>
@@ -358,12 +348,21 @@ const NavIndex = ({ onOpenRSVP }) => {
                 <span className="nanum-myeongjo-regular rsvp-text-svp">SVP</span>
               </p>
             </div>
+
+            {/* Prenup Photo — bottom of card */}
+            <div className="w-full flex-shrink-0 overflow-hidden rsvp-photo-container">
+              <img 
+                src="/assets/images/prenup/HAN_1922 copy (1).jpg" 
+                alt="Prenup photo" 
+                className="w-full h-full object-cover rsvp-photo"
+              />
+            </div>
           </div>
           
           {/* New Container - Wider than long */}
           <div 
             ref={detailsContainerRef}
-            className="bg-white flex flex-col items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105 relative details-container"
+            className="bg-[#FDF6F0] flex flex-col items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105 relative details-container"
             onClick={() => {
               window.scrollTo(0, 0)
               // Slide out animation before navigation
@@ -393,7 +392,7 @@ const NavIndex = ({ onOpenRSVP }) => {
             
             {/* Text Content */}
             <div className="text-center px-4 relative z-10">
-              <p className="nanum-myeongjo-regular text-[#333333] details-text-view">
+              <p className="nanum-myeongjo-regular text-[#0B1F3A] details-text-view">
                 VIEW THE
               </p>
                 <p className="imperial-script-regular underline details-text-details">
@@ -477,9 +476,9 @@ const NavIndex = ({ onOpenRSVP }) => {
               }
             }}
           >
-            <div className="bg-white relative polaroid-1-container">
+            <div className="bg-[#FDF6F0] relative polaroid-1-container">
               <img 
-                src="/assets/images/prenup/prenup-7.jpg" 
+                src="/assets/images/prenup/HAN_5426 copy.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-1-image"
               />
@@ -509,9 +508,9 @@ const NavIndex = ({ onOpenRSVP }) => {
               }
             }}
           >
-            <div className="bg-white relative polaroid-2-container">
+            <div className="bg-[#FDF6F0] relative polaroid-2-container">
               <img 
-                src="/assets/images/prenup/prenup-4.jpg" 
+                src="/assets/images/prenup/HAN_1954 copy.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-2-image"
               />
@@ -541,7 +540,7 @@ const NavIndex = ({ onOpenRSVP }) => {
                   >
                     {/* Box with Section Name */}
                     <div 
-                      className="px-4 py-6 rounded-lg border-2 text-center min-h-[80px] flex items-center justify-center bg-white border-[#333333]/30 text-[#333333] shadow-sm"
+                      className="px-4 py-6 rounded-lg border-2 text-center min-h-[80px] flex items-center justify-center bg-[#FDF6F0] border-[#0B1F3A]/30 text-[#0B1F3A] shadow-sm"
                     >
                       <span className="text-sm sm:text-base font-albert font-medium">
                         {section.name}
@@ -567,8 +566,8 @@ const NavIndex = ({ onOpenRSVP }) => {
                   <div 
                     className={`px-4 py-6 rounded-lg border-2 transition-all duration-300 text-center min-h-[80px] flex items-center justify-center ${
                       isActive
-                        ? 'bg-[#333333] border-[#333333] text-white shadow-lg'
-                        : 'bg-white border-[#333333]/40 text-[#333333] hover:border-[#333333]/60 hover:bg-white shadow-md'
+                        ? 'bg-[#0B1F3A] border-[#0B1F3A] text-white shadow-lg'
+                        : 'bg-[#FDF6F0] border-[#0B1F3A]/40 text-[#0B1F3A] hover:border-[#0B1F3A]/60 hover:bg-[#FDF6F0] shadow-md'
                     }`}
                   >
                     <span className="text-sm sm:text-base font-albert font-medium">
@@ -578,7 +577,7 @@ const NavIndex = ({ onOpenRSVP }) => {
                   
                   {/* Active indicator dot */}
                   {isActive && (
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#333333] rounded-full border-2 border-white" />
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#0B1F3A] rounded-full border-2 border-white" />
                   )}
                 </button>
               )

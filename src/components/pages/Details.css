@@ -14,7 +14,7 @@
 
 .venue-title-text {
   line-height: 0.8;
-  color: #800000;
+  color: #CC5500;
 }
 
 /* Venue Image Container */
@@ -48,7 +48,7 @@
 
 .program-title-text {
   line-height: 0.8;
-  color: #800000;
+  color: #CC5500;
   display: block;
   text-align: center;
 }
@@ -60,7 +60,7 @@
 /* Date Selector */
 .date-month-year {
   font-style: italic;
-  color: #800000;
+  color: #CC5500;
 }
 
 .heart-day-number {
@@ -73,22 +73,22 @@
 }
 
 .timeline-event-time {
-  color: #333333;
+  color: #CC5500;
 }
 
 .timeline-event-description {
-  color: #333333;
+  color: #CC5500;
 }
 
 /* Dress Code */
 .dress-code-title-text {
   line-height: 0.8;
-  color: #800000;
+  color: #CC5500;
   white-space: nowrap;
 }
 
 .dress-code-description {
-  color: #171717;
+  color: #CC5500;
 }
 
 .dress-code-image-container {
@@ -119,7 +119,7 @@
 
 .gift-registry-title-text {
   line-height: 0.8;
-  color: #f5f5f0;
+  color: #FDF6F0;
 }
 
 .gift-button {
@@ -130,6 +130,77 @@
   margin: 4px;
 }
 
+/* Where to Go — full-bleed hero + burgundy textured panel (invitation-style) */
+.venue-where-stack {
+  box-shadow: 0 12px 40px rgba(11, 31, 58, 0.12);
+}
+
+.venue-where-hero {
+  margin: 0;
+  position: relative;
+}
+
+/* Soft blend from photo into maroon panel */
+.venue-where-hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(28%, 140px);
+  background: linear-gradient(
+    to bottom,
+    rgba(58, 12, 18, 0) 0%,
+    rgba(58, 12, 18, 0.45) 55%,
+    rgba(58, 12, 18, 0.92) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.venue-where-section {
+  position: relative;
+  background-color: #4a0f14;
+  background-image: url(/assets/images/graphics/bg-3.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Richer maroon + paper texture */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.venue-where-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+.venue-where-title-text {
+  line-height: 0.92;
+  color: #f8f2ea;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.venue-crossfade--hero {
+  aspect-ratio: 5 / 4;
+  min-height: 200px;
+  max-height: min(52vh, 420px);
+}
+
+@media (min-width: 640px) {
+  .venue-crossfade--hero {
+    aspect-ratio: 16 / 10;
+    max-height: min(48vh, 480px);
+  }
+}
+
 /* Upload Section */
 .upload-title {
   padding-top: 4rem;
@@ -138,7 +209,7 @@
 
 .upload-title-text {
   line-height: 0.8;
-  color: #800000;
+  color: #CC5500;
 }
 
 .upload-qr-container {
@@ -163,12 +234,12 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-color: #800000;
+  background-color: #CC5500;
 }
 
 .faq-title-text {
   line-height: 0.8;
-  color: #f5f5f0;
+  color: #FDF6F0;
 }
 
 /* Modal */

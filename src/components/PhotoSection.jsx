@@ -19,9 +19,9 @@ const PhotoSection = ({
   
   // Default images if none provided
   const defaultImages = [
-    { src: '/assets/images/prenup/APA_0891.JPG', alt: 'Photo 1', label: 'Memories' },
-    { src: '/assets/images/prenup/APA_0891.JPG', alt: 'Photo 2', label: 'Together' },
-    { src: '/assets/images/prenup/APA_0891.JPG', alt: 'Photo 3', label: 'Love' }
+    { src: '/assets/images/prenup/HAN_1994 copy.jpg', alt: 'Photo 1', label: 'Memories' },
+    { src: '/assets/images/prenup/HAN_1922 copy (1).jpg', alt: 'Photo 2', label: 'Together' },
+    { src: '/assets/images/prenup/HAN_5426 copy.jpg', alt: 'Photo 3', label: 'Love' }
   ]
   const displayImages = images.length > 0 ? images : defaultImages
   
@@ -99,7 +99,7 @@ const PhotoSection = ({
           }}
         >
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               top: '5%',
@@ -110,7 +110,7 @@ const PhotoSection = ({
             {texts[0] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               top: '25%',
@@ -121,7 +121,7 @@ const PhotoSection = ({
             {texts[1] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               bottom: '25%',
@@ -132,7 +132,7 @@ const PhotoSection = ({
             {texts[2] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               bottom: '5%',
@@ -143,7 +143,7 @@ const PhotoSection = ({
             {texts[3] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               top: '50%',
@@ -155,7 +155,7 @@ const PhotoSection = ({
           </p>
           {/* Additional right side text elements */}
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               top: '15%',
@@ -166,7 +166,7 @@ const PhotoSection = ({
             {texts[0] || 'Forever'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               top: '40%',
@@ -177,7 +177,7 @@ const PhotoSection = ({
             {texts[1] || 'Always'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               bottom: '40%',
@@ -188,7 +188,7 @@ const PhotoSection = ({
             {texts[2] || 'Together'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800000] whitespace-nowrap"
+            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#CC5500] whitespace-nowrap"
             style={{
               position: 'absolute',
               bottom: '15%',
@@ -208,23 +208,30 @@ const PhotoSection = ({
           {displayImages[0] && (
             <div 
               ref={leftPhotoRef}
-              className="absolute -top-6 -left-8 sm:left-4 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-white shadow-lg transform -rotate-12 opacity-90"
+              className="absolute -top-6 -left-8 sm:left-4 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-[#FDF6F0] shadow-lg transform -rotate-12 opacity-90"
               style={{
                 border: '4px solid white',
                 borderTop: '4px solid white'
               }}
             >
-              <div 
-                className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
+              <div
+                className="w-full h-40 sm:h-60 lg:h-72 overflow-hidden bg-[#e8e0d8]"
                 style={{
-                  backgroundImage: `url(${displayImages[0].src})`,
                   borderTop: '4px solid white',
                   borderLeft: '4px solid white',
-                  borderRight: '4px solid white'
+                  borderRight: '4px solid white',
                 }}
-              ></div>
+              >
+                <img
+                  src={displayImages[0].src}
+                  alt={displayImages[0].alt || ''}
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800000] font-handwritten">
+                <div className="text-sm sm:text-lg text-[#CC5500] font-handwritten">
                   {displayImages[0].label || 'Memories'}
                 </div>
               </div>
@@ -235,23 +242,30 @@ const PhotoSection = ({
           {displayImages[1] && (
             <div 
               ref={middlePhotoRef}
-              className="relative w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-white shadow-xl transform rotate-3 hover:scale-105 transition-transform duration-300"
+              className="relative w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-[#FDF6F0] shadow-xl transform rotate-3 hover:scale-105 transition-transform duration-300"
               style={{
                 border: '4px solid white',
                 borderTop: '4px solid white'
               }}
             >
-              <div 
-                className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
+              <div
+                className="w-full h-40 sm:h-60 lg:h-72 overflow-hidden bg-[#e8e0d8]"
                 style={{
-                  backgroundImage: `url(${displayImages[1].src})`,
                   borderTop: '4px solid white',
                   borderLeft: '4px solid white',
-                  borderRight: '4px solid white'
+                  borderRight: '4px solid white',
                 }}
-              ></div>
+              >
+                <img
+                  src={displayImages[1].src}
+                  alt={displayImages[1].alt || ''}
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800000] font-handwritten">
+                <div className="text-sm sm:text-lg text-[#CC5500] font-handwritten">
                   {displayImages[1].label || 'Together'}
                 </div>
               </div>
@@ -262,23 +276,30 @@ const PhotoSection = ({
           {displayImages[2] && (
             <div 
               ref={rightPhotoRef}
-              className="absolute -top-4 -right-8 sm:right-4 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-white shadow-lg transform rotate-6"
+              className="absolute -top-4 -right-8 sm:right-4 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 bg-[#FDF6F0] shadow-lg transform rotate-6"
               style={{
                 border: '4px solid white',
                 borderTop: '4px solid white'
               }}
             >
-              <div 
-                className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
+              <div
+                className="w-full h-40 sm:h-60 lg:h-72 overflow-hidden bg-[#e8e0d8]"
                 style={{
-                  backgroundImage: `url(${displayImages[2].src})`,
                   borderTop: '4px solid white',
                   borderLeft: '4px solid white',
-                  borderRight: '4px solid white'
+                  borderRight: '4px solid white',
                 }}
-              ></div>
+              >
+                <img
+                  src={displayImages[2].src}
+                  alt={displayImages[2].alt || ''}
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800000] font-handwritten">
+                <div className="text-sm sm:text-lg text-[#CC5500] font-handwritten">
                   {displayImages[2].label || 'Love'}
                 </div>
               </div>
@@ -288,7 +309,7 @@ const PhotoSection = ({
         
         {/* Paragraph */}
         {paragraph && (
-          <p className="text-base sm:text-lg font-albert font-thin text-[#333333] text-center max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg font-albert font-thin text-[#0B1F3A] text-center max-w-xl mx-auto leading-relaxed">
             {paragraph}
           </p>
         )}

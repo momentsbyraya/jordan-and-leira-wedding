@@ -1,131 +1,67 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
 import { venues as venuesData } from '../data'
-import SecondaryButton from './SecondaryButton'
-import Line from './Line'
 import './pages/Details.css'
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
+const CROSSFADE_MS = 5000
+const TRANSITION_MS = 1200
+
 const Venue = () => {
-  const venueTitleRef = useRef(null)
-  const venue1Ref = useRef(null)
-  const venue2Ref = useRef(null)
+  const venueSectionRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const ceremony = venuesData.ceremony
   const reception = venuesData.reception
 
+  const fallbackSlides = [
+    ceremony.image || '/assets/images/venues/ceremony.jpg',
+    reception.image || '/assets/images/venues/reception.jpg',
+  ].filter(Boolean)
+
+  const heroSlides =
+    Array.isArray(venuesData.heroSlides) && venuesData.heroSlides.length > 0
+      ? venuesData.heroSlides
+      : fallbackSlides
+
+  const addressLine = [
+    ceremony.address && `${ceremony.address}, `,
+    ceremony.city,
+    ceremony.state && `, ${ceremony.state}`,
+    ceremony.zip && `, ${ceremony.zip}`,
+  ]
+    .filter(Boolean)
+    .join('')
+
+  const advanceSlide = useCallback(() => {
+    setActiveIndex((i) => (i + 1) % heroSlides.length)
+  }, [heroSlides.length])
+
   useEffect(() => {
-    // Venue Title animation
-    if (venueTitleRef.current) {
+    const id = window.setInterval(advanceSlide, CROSSFADE_MS)
+    return () => window.clearInterval(id)
+  }, [advanceSlide])
+
+  useEffect(() => {
+    if (venueSectionRef.current) {
       ScrollTrigger.create({
-        trigger: venueTitleRef.current,
-        start: "top 80%",
-        animation: gsap.fromTo(venueTitleRef.current,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        trigger: venueSectionRef.current,
+        start: 'top 80%',
+        animation: gsap.fromTo(
+          venueSectionRef.current,
+          { opacity: 0, y: 24 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
         ),
-        toggleActions: "play none none reverse"
+        toggleActions: 'play none none reverse',
       })
     }
 
-    // Venue 1 animation - animate image and content separately
-    if (venue1Ref.current) {
-      const venue1Container = venue1Ref.current
-      const flexContainer = venue1Container.querySelector('.flex.flex-row')
-      if (flexContainer) {
-        const venue1Image = flexContainer.querySelector('.venue-image-container')
-        const venue1Content = Array.from(flexContainer.children).find(child => 
-          child.classList.contains('w-1/2') && child.querySelector('.font-boska')
-        )
-        
-        if (venue1Image) {
-          gsap.set(venue1Image, { opacity: 0, x: -30 })
-        }
-        if (venue1Content) {
-          gsap.set(venue1Content, { opacity: 0, x: 30 })
-        }
-        
-        ScrollTrigger.create({
-          trigger: venue1Ref.current,
-          start: "top 75%",
-          onEnter: () => {
-            if (venue1Image) {
-              gsap.to(venue1Image, {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: "power2.out"
-              })
-            }
-            if (venue1Content) {
-              gsap.to(venue1Content, {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: "power2.out",
-                delay: 0.2
-              })
-            }
-          }
-        })
-      }
-    }
-
-    // Venue 2 animation - animate image and content separately
-    if (venue2Ref.current) {
-      const venue2Container = venue2Ref.current
-      const flexContainer = venue2Container.querySelector('.flex.flex-row')
-      if (flexContainer) {
-        const venue2Image = flexContainer.querySelector('.venue-image-container')
-        const venue2Content = Array.from(flexContainer.children).find(child => 
-          child.classList.contains('w-1/2') && child.querySelector('.font-boska')
-        )
-        
-        if (venue2Image) {
-          gsap.set(venue2Image, { opacity: 0, x: 30 })
-        }
-        if (venue2Content) {
-          gsap.set(venue2Content, { opacity: 0, x: -30 })
-        }
-        
-        ScrollTrigger.create({
-          trigger: venue2Ref.current,
-          start: "top 75%",
-          onEnter: () => {
-            if (venue2Content) {
-              gsap.to(venue2Content, {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: "power2.out"
-              })
-            }
-            if (venue2Image) {
-              gsap.to(venue2Image, {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: "power2.out",
-                delay: 0.2
-              })
-            }
-          }
-        })
-      }
-    }
-
-    // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars && (
-          trigger.vars.trigger === venueTitleRef.current ||
-          trigger.vars.trigger === venue1Ref.current ||
-          trigger.vars.trigger === venue2Ref.current
-        )) {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars && trigger.vars.trigger === venueSectionRef.current) {
           trigger.kill()
         }
       })
@@ -133,137 +69,88 @@ const Venue = () => {
   }, [])
 
   return (
-    <>
-      {/* Venue Title */}
-      <div ref={venueTitleRef}>
-        <h3 className="relative inline-block px-6 venue-title text-center w-full">
-          <span 
-            className="font-tebranos text-5xl sm:text-6xl md:text-7xl lg:text-8xl inline-block leading-none uppercase venue-title-text"
+    <div className="venue-where-stack mt-20 mb-12 sm:mb-14 w-full max-w-full relative overflow-x-clip shadow-lg">
+      {/* Hero: venue / reception crossfade — full width, above text panel */}
+      <div className="venue-where-hero relative w-full">
+        <div
+          className="venue-crossfade venue-crossfade--hero relative w-full overflow-hidden bg-[#2a0a0c]"
+          aria-roledescription="carousel"
+          aria-label="Venue photos"
+        >
+          {heroSlides.map((src, i) => (
+            <img
+              key={src}
+              src={encodeURI(src)}
+              alt={`${ceremony.name} — photo ${i + 1} of ${heroSlides.length}`}
+              className="absolute inset-0 w-full h-full object-cover object-center transition-opacity ease-in-out"
+              style={{
+                opacity: activeIndex === i ? 1 : 0,
+                transitionDuration: `${TRANSITION_MS}ms`,
+                zIndex: activeIndex === i ? 2 : 1,
+              }}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ))}
+          <div
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-[5]"
+            aria-hidden
           >
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === i
+                    ? 'w-6 bg-white'
+                    : 'w-2 bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Show venue photo ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Burgundy textured panel — title, copy, CTA */}
+      <div
+        ref={venueSectionRef}
+        className="venue-where-section relative text-center px-5 sm:px-10 pt-10 sm:pt-12 pb-28 sm:pb-32"
+      >
+        <h3 className="relative z-[1] px-4 mb-6 sm:mb-8">
+          <span className="font-tebranos text-4xl sm:text-5xl md:text-6xl lg:text-7xl inline-block leading-[0.95] uppercase tracking-tight venue-where-title-text">
             WHERE TO GO
           </span>
         </h3>
-      </div>
 
-      {/* Venues Container - Side by side on 992px and above */}
-      <div className="flex flex-col lg-custom:flex-row gap-3 lg-custom:gap-4 items-stretch">
-        {/* Ceremony Information */}
-        <div className="relative overflow-visible flex-1">
-          <div className="relative overflow-hidden">
-            <div 
-              ref={venue1Ref} 
-              className="text-center transition-opacity duration-500 ease-in-out"
-            >
-              {/* Venue Image and Details - Side by side on mobile, stacked on 992px+ */}
-              <div className="flex flex-row lg-custom:flex-col gap-6 md:gap-8 lg-custom:gap-6 items-start">
-                {/* Venue Image */}
-                <div className="w-1/2 lg-custom:w-full">
-                  <div className="w-full relative venue-image-container">
-                    <img 
-                      src="/assets/images/venues/ceremony.jpg" 
-                      alt={ceremony.name} 
-                      className="w-full h-full object-cover rounded"
-                    />
-                  </div>
-                </div>
-                
-                {/* Venue Details */}
-                <div className="w-1/2 lg-custom:w-full flex flex-col justify-between text-left venue-image-container">
-                  {/* Venue Name and Location Container */}
-                  <div>
-                    {/* Venue Name */}
-                    <div className="text-lg sm:text-xl md:text-2xl font-boska text-[#333333] mb-2 text-left">
-                      {ceremony.name}
-                    </div>
-                    
-                     {/* Address */}
-                     <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-left">
-                       {ceremony.address && `${ceremony.address}, `}
-                       {ceremony.city}
-                       {ceremony.state && `, ${ceremony.state}`}
-                       {ceremony.zip && `, ${ceremony.zip}`}
-                     </p>
-                  </div>
-
-                  {/* Google Maps Link Button */}
-                  <div className="flex justify-start items-center">
-                    <SecondaryButton
-                      href={ceremony.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      icon={ArrowRight}
-                    >
-                      Get Direction
-                    </SecondaryButton>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="relative z-[1] text-sm sm:text-base md:text-lg font-albert text-white max-w-xl sm:max-w-2xl mx-auto leading-relaxed space-y-4">
+          <p className="font-medium not-italic">
+            Ceremony: {ceremony.time}{' '}
+            <span className="font-light opacity-90">&amp;</span> Venue: {reception.time}
+            <span className="font-light"> – {ceremony.name}</span>
+            {addressLine ? (
+              <span className="font-light opacity-95"> ({addressLine})</span>
+            ) : null}
+          </p>
         </div>
 
-        {/* Vertical Divider - Hidden on mobile, shown on 992px and above */}
-        <div className="hidden lg-custom:block w-px bg-[#333333] opacity-40 self-stretch"></div>
-        <div className="lg-custom:hidden w-full">
-          <Line />
-        </div>
-
-        {/* Reception Information */}
-        <div className="relative overflow-visible flex-1">
-          <div className="relative overflow-hidden">
-            <div 
-              ref={venue2Ref}
-              className="text-center transition-opacity duration-500 ease-in-out"
-            >
-              {/* Venue Image and Details - Side by side on mobile, stacked on 992px+ */}
-              <div className="flex flex-row lg-custom:flex-col gap-6 md:gap-8 lg-custom:gap-6 items-start">
-                {/* Venue Details - First on mobile (left), second on desktop (bottom) */}
-                <div className="w-1/2 lg-custom:w-full flex flex-col justify-between text-right lg-custom:text-left venue-image-container order-1 lg-custom:order-2">
-                  {/* Venue Name and Location Container */}
-                  <div>
-                    {/* Venue Name */}
-                    <div className="text-lg sm:text-xl md:text-2xl font-boska text-[#333333] mb-2 text-right lg-custom:text-left">
-                      {reception.name}
-                    </div>
-                    
-                     {/* Address */}
-                     <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-right lg-custom:text-left">
-                       {reception.address && `${reception.address}, `}
-                       {reception.city}
-                       {reception.state && `, ${reception.state}`}
-                       {reception.zip && `, ${reception.zip}`}
-                     </p>
-                  </div>
-
-                  {/* Google Maps Link Button */}
-                  <div className="flex justify-end lg-custom:justify-start items-center">
-                    <SecondaryButton
-                      href={reception.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      icon={ArrowRight}
-                    >
-                      Get Direction
-                    </SecondaryButton>
-                  </div>
-                </div>
-                
-                {/* Venue Image - Second on mobile (right), first on desktop (top) */}
-                <div className="w-1/2 lg-custom:w-full order-2 lg-custom:order-1">
-                  <div className="w-full relative venue-image-container">
-                    <img 
-                      src="/assets/images/venues/reception.jpg" 
-                      alt={reception.name} 
-                      className="w-full h-full object-cover rounded"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20">
+          <a
+            href={ceremony.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center hover:opacity-90 transition-all duration-300 group bg-[#FDF6F0] rounded-lg px-8 py-3 gap-2 gift-button no-underline shadow-md"
+          >
+            <div className="absolute inset-0 rounded-lg border border-[#CC5500] pointer-events-none gift-button-border" />
+            <span className="text-[#CC5500] font-medium text-sm sm:text-base relative z-10">
+              Get Direction
+            </span>
+            <ArrowRight className="w-4 h-4 text-[#CC5500] relative z-10" />
+          </a>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

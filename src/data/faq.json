@@ -1,16 +1,36 @@
 {
   "faqData": [
     {
-      "question": "Can guests take photos during the ceremony?",
-      "answer": "Yes, guests may take photos during the ceremony. We ask that these moments are not shared on social media. A QR code will be provided for uploading your photos. Thank you for your understanding."
+      "question": "🕰 What time should I arrive?",
+      "answer": "Please arrive 30 minutes before the ceremony."
     },
     {
-      "question": "What is the wedding dress code?",
-      "answer": "Our wedding follows a strict formal dress code. No slippers, shorts, jeans, tshirt, or white color. Colors allowed: Brown, black, teal green, blue, gray, or beige only. We kindly ask all guests to adhere to the dress code."
+      "question": "🚗 Is parking available?",
+      "answer": "Yes, parking is available at the venue."
     },
     {
-      "question": "Are children allowed at the wedding?",
-      "answer": "While we love children, we are only able to accommodate those who are part of the entourage. We appreciate your understanding and cooperation."
+      "question": "👥 Can I bring a plus one?",
+      "answer": "Invitation is for named guests only."
+    },
+    {
+      "question": "📩 When is the RSVP deadline?",
+      "answer": "Kindly confirm your attendance on or before May 30, 2026."
+    },
+    {
+      "question": "👶 Are children allowed?",
+      "answer": "As much as we adore your little ones, we are only able to accommodate children from our entourage and immediate family."
+    },
+    {
+      "question": "👥 Can I bring someone else if my companion can't attend?",
+      "answer": "We're so sorry, but unless we have personally confirmed it, replacements are not allowed. We have carefully planned our guest list and would love to celebrate with the family and friends we personally invited. Thank you for your understanding. 💕"
+    },
+    {
+      "question": "📞 If you have questions that haven't been addressed here, who should we contact?",
+      "answer": "You may reach us through our social media accounts. 😊"
+    },
+    {
+      "question": "📸 Snap & Share",
+      "answer": "Help us relive the memories—tag your photos with #WeFinalLEImadeItJORDAN 💖"
     }
   ]
 }

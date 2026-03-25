@@ -10,6 +10,10 @@ export default {
         'lg-custom': '992px',
       },
       colors: {
+        primary: "#CC5500",
+        secondary: "#0B1F3A",
+        accent: "#AAB7C4",
+        cream: "#FDF6F0",
         'wedding': {
           50: '#fdf8f6',
           100: '#f2e8e5',

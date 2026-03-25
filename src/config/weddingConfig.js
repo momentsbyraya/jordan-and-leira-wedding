@@ -20,13 +20,14 @@ export const weddingConfig = {
   // Venue Information - imported from venues.json
   venue: venues,
 
-  // RSVP Information
+  // RSVP Information (from couple.json)
   rsvp: {
-    deadline: "2024-05-15",
-    email: "rsvp@johnsonwilliams.com",
-    phone: "(555) 123-4567",
-    website: "https://johnsonwilliams.rsvp",
-    message: "Please RSVP by May 15th, 2024"
+    deadline: couple.rsvp?.deadline ?? "2026-05-30",
+    email: couple.rsvp?.email ?? "",
+    phone: couple.rsvp?.phone ?? "",
+    website: couple.rsvp?.website ?? "",
+    message: couple.rsvp?.message ?? "Please RSVP by May 30, 2026",
+    formUrl: couple.rsvp?.formUrl ?? "https://forms.gle/V1hYqW3P9KtUJdsGA"
   },
 
   // Theme and Styling

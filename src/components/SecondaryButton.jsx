@@ -1,9 +1,8 @@
 import React from 'react'
-import { themeConfig } from '../config/themeConfig'
 
 const SecondaryButton = ({ children, href, onClick, className = '', target, rel, icon: Icon }) => {
-  const baseClasses = 'inline-flex items-center gap-2 text-sm sm:text-base font-medium transition-all duration-300 hover:opacity-80 underline'
-  const colorStyle = { color: themeConfig.cssVariables['--primary-text'] }
+  const baseClasses = 'inline-flex items-center gap-2 text-sm sm:text-base font-medium transition-all duration-300 underline px-4 py-2 rounded-md bg-[#CC5500] text-white hover:bg-[#A84400]'
+  const colorStyle = { color: '#FFFFFF' }
   
   if (href) {
     return (

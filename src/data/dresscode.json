@@ -1,36 +1,48 @@
 {
   "mainDressCode": {
     "title": "Dress Code",
-    "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: brown, black, teal green, blue, gray, or beige only."
+    "description": "To complement the color motif of our celebration, we kindly request our guests to dress in formal or semi-formal attire in any of the following shades: Champagne, Dark Beige, Taupe, Dusty Blue, Mocha, Burgundy, Light Terracotta, or Sage Green.\n\nLadies: Floor-length or long dresses\nGentlemen: Long-sleeved dress shirt with trousers or slacks"
   },
   "sections": [
     {
       "title": "FORMAL ATTIRE",
       "type": "image",
       "image": "/assets/images/dresscode/blue.png",
-      "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: brown, black, teal green, blue, gray, or beige only.",
+      "description": "To complement the color motif of our celebration, we kindly request our guests to dress in formal or semi-formal attire.",
       "colors": [
         {
-          "name": "Brown",
-          "hex": "#8B4513"
+          "name": "Champagne",
+          "hex": "#F7E7CE"
         },
         {
-          "name": "Black",
-          "hex": "#000000"
+          "name": "Dark Beige",
+          "hex": "#C7B299"
         },
         {
-          "name": "Teal Green",
-          "hex": "#008080"
+          "name": "Taupe",
+          "hex": "#8B7D6B"
         },
         {
-          "name": "Blue Gray",
-          "hex": "#708090"
+          "name": "Dusty Blue",
+          "hex": "#6E7F99"
         },
         {
-          "name": "Beige",
-          "hex": "#D2B48C"
+          "name": "Mocha",
+          "hex": "#7B5E57"
+        },
+        {
+          "name": "Burgundy",
+          "hex": "#800020"
+        },
+        {
+          "name": "Light Terracotta",
+          "hex": "#D08A6A"
+        },
+        {
+          "name": "Sage Green",
+          "hex": "#9CAF88"
         }
       ]
     }
   ]
-} 
+}

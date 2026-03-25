@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, X } from 'lucide-react'
-import { paymentMethods as paymentMethodsData } from '../data'
 import './pages/Details.css'
 
 // Register ScrollTrigger plugin
@@ -12,8 +11,6 @@ gsap.registerPlugin(ScrollTrigger)
 const GiftRegistry = () => {
   const giftRegistryRef = useRef(null)
   const [isGiftModalOpen, setIsGiftModalOpen] = useState(false)
-  const { paymentMethods } = paymentMethodsData
-
   useEffect(() => {
     // Gift Registry animation
     if (giftRegistryRef.current) {
@@ -50,7 +47,7 @@ const GiftRegistry = () => {
               Gift Registry
             </span>
           </h3>
-          <p className="text-base sm:text-lg font-albert font-thin text-[#f5f5f0] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg font-albert font-thin text-[#FDF6F0] max-w-3xl mx-auto leading-relaxed">
             Your presence is our greatest gift. Monetary gifts are appreciated.
           </p>
         </div>
@@ -59,13 +56,13 @@ const GiftRegistry = () => {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
           <button
             onClick={() => setIsGiftModalOpen(true)}
-            className="relative flex items-center justify-center hover:opacity-80 transition-all duration-300 group bg-white rounded-lg px-8 py-3 gap-2 gift-button"
+            className="relative flex items-center justify-center hover:opacity-80 transition-all duration-300 group bg-[#FDF6F0] rounded-lg px-8 py-3 gap-2 gift-button"
           >
             <div 
-              className="absolute inset-0 rounded-lg border border-[#800000] pointer-events-none gift-button-border"
+              className="absolute inset-0 rounded-lg border border-[#CC5500] pointer-events-none gift-button-border"
             ></div>
-            <span className="text-[#800000] font-medium text-sm sm:text-base relative z-10">Send Gift</span>
-            <ArrowRight className="w-4 h-4 text-[#800000] relative z-10" />
+            <span className="text-[#CC5500] font-medium text-sm sm:text-base relative z-10">Send Gift</span>
+            <ArrowRight className="w-4 h-4 text-[#CC5500] relative z-10" />
           </button>
         </div>
       </div>
@@ -80,13 +77,13 @@ const GiftRegistry = () => {
           />
           
           {/* Modal Content */}
-          <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-[#FDF6F0] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             {/* Header */}
-            <div className="sticky top-0 bg-white z-10 flex items-center justify-between p-6 border-b border-gray-200 rounded-t-2xl">
-              <h3 className="text-2xl sm:text-3xl alice-regular font-black text-gray-800 modal-methods-title">Methods</h3>
+            <div className="sticky top-0 bg-[#FDF6F0] z-10 flex items-center justify-between p-6 border-b border-gray-200 rounded-t-2xl">
+              <h3 className="text-2xl sm:text-3xl alice-regular font-black text-[#0B1F3A] modal-methods-title">Methods</h3>
               <button
                 onClick={() => setIsGiftModalOpen(false)}
-                className="text-gray-500 hover:text-gray-800 transition-colors duration-200"
+                className="text-gray-500 hover:text-[#0B1F3A] transition-colors duration-200"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -94,24 +91,11 @@ const GiftRegistry = () => {
 
             {/* Content */}
             <div className="p-6">
-              {paymentMethods && paymentMethods.length > 0 && (
-                <div className="flex items-center justify-center">
-                  {paymentMethods.map((method, index) => (
-                    <div key={index} className="flex items-center justify-center">
-                      {/* BPI QR Code Image */}
-                      {method.image && (
-                        <div className="flex items-center justify-center">
-                          <img 
-                            src={method.image} 
-                            alt="BPI QR Code" 
-                            className="w-full max-w-md h-auto object-contain"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="flex min-h-[280px] sm:min-h-[360px] w-full items-center justify-center rounded-xl border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/50 px-6 py-16">
+                <p className="text-center font-tebranos text-2xl sm:text-3xl tracking-wide text-[#0B1F3A]/80">
+                  TO BE ADDED
+                </p>
+              </div>
             </div>
           </div>
         </div>,

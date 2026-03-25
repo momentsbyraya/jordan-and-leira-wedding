@@ -1,48 +1,58 @@
+// Global wedding palette
+export const theme = {
+    primary: "#CC5500",       // Burnt Orange
+    secondary: "#0B1F3A",     // Navy Blue
+    background: "#FDF6F0",    // Light Cream
+    accent: "#AAB7C4",
+    textPrimary: "#0B1F3A",
+    textSecondary: "#5A6B7C"
+}
+
 // Theme Configuration - Easy to customize colors
 export const themeConfig = {
     // Background Colors
     backgrounds: {
-        primary: 'bg-gray-900',        // Main dark background
-        secondary: 'bg-gray-800',      // Secondary dark background (modals, cards)
-        accent: 'bg-[#800000]',      // Accent background (Maroon)
-        light: 'bg-white/50',          // Light overlay backgrounds
-        theme: 'bg-[#dee5ed]',        // Custom theme color
+        primary: 'bg-[#0B1F3A]',
+        secondary: 'bg-[#AAB7C4]',
+        accent: 'bg-[#CC5500]',
+        light: 'bg-[#FDF6F0]/50',
+        theme: 'bg-[#FDF6F0]',
         crumpledPaper: 'bg-[url("/assets/images/crumpled-paper.png")] bg-cover bg-center bg-no-repeat', // Crumpled paper background
     },
 
     // Text Colors
     text: {
-        primary: 'text-[#800000]',     // Main heading text color (Maroon)
-        secondary: 'text-gray-300',    // Subheading and body text color
-        accent: 'text-[#800000]',    // Accent text color (Maroon)
-        muted: 'text-gray-400',        // Muted text color (icons, small text)
-        dark: 'text-wedding-800',      // Dark text for light backgrounds
-        theme: 'text-[#ad8369]',      // Custom theme text color
-        pause: 'text-[#dcdcdc]',      // Pause button text color
-        custom: 'text-[#44484d]',     // Custom text color
+        primary: 'text-[#0B1F3A]',
+        secondary: 'text-[#5A6B7C]',
+        accent: 'text-[#CC5500]',
+        muted: 'text-[#5A6B7C]',
+        dark: 'text-[#0B1F3A]',
+        theme: 'text-[#5A6B7C]',
+        pause: 'text-[#FDF6F0]',
+        custom: 'text-[#0B1F3A]',
     },
 
     // Border Colors
     borders: {
-        primary: 'border-gray-700',    // Main border color
-        secondary: 'border-gray-600',  // Secondary border color
-        accent: 'border-wedding-300',  // Accent border color
-        theme: 'border-[#ad8369]',    // Custom theme border color
+        primary: 'border-[#0B1F3A]',
+        secondary: 'border-[#AAB7C4]',
+        accent: 'border-[#CC5500]',
+        theme: 'border-[#5A6B7C]',
     },
 
     // Button Colors
     buttons: {
-        primary: 'bg-[#800000] hover:bg-[#660000]',  // Primary button (Maroon)
-        secondary: 'border border-gray-600 hover:border-gray-400', // Secondary button
-        text: 'text-gray-300 hover:text-white', // Button text color
-        theme: 'bg-[#ad8369] hover:bg-[#ad8369]/80', // Custom theme button
+        primary: 'bg-[#CC5500] hover:bg-[#A84400]',
+        secondary: 'border border-[#AAB7C4] hover:border-[#0B1F3A]',
+        text: 'text-white hover:text-white',
+        theme: 'bg-[#0B1F3A] hover:bg-[#0B1F3A]/90',
     },
 
     // Hover Effects
     hover: {
-        primary: 'hover:bg-[#660000]',     // Primary button hover (Dark Maroon)
-        secondary: 'hover:border-gray-400 hover:text-white', // Secondary button hover
-        theme: 'hover:bg-[#ad8369]/80',     // Custom theme hover
+        primary: 'hover:bg-[#A84400]',     // Primary button hover (Dark Maroon)
+        secondary: 'hover:border-[#0B1F3A] hover:text-white',
+        theme: 'hover:bg-[#0B1F3A]/90',
     },
 
     // Container Configuration
@@ -54,76 +64,76 @@ export const themeConfig = {
 
     // Calendar Configuration
     calendar: {
-        weddingDate: '2026-02-22',          // Wedding date (YYYY-MM-DD format)
-        highlightColor: 'bg-[#6c756a]',     // Color for wedding date highlight
-        heartColor: 'text-[#6c756a]',       // Color for heart icon
-        textColor: 'text-gray-700',         // Calendar text color
-        headerColor: 'text-gray-800',       // Month header color
-        dayNamesColor: 'text-gray-600',     // Day names color
-        background: 'bg-[#6c756a]',         // Calendar background color
+        weddingDate: '2026-06-26',          // Wedding date (YYYY-MM-DD format)
+        highlightColor: 'bg-[#CC5500]',
+        heartColor: 'text-[#CC5500]',
+        textColor: 'text-[#5A6B7C]',
+        headerColor: 'text-[#0B1F3A]',
+        dayNamesColor: 'text-[#5A6B7C]',
+        background: 'bg-[#FDF6F0]',
     },
 
     // Paragraph Configuration
     paragraph: {
-        background: 'bg-[#f4f5ef]',         // Paragraph background color
+        background: 'bg-[#FDF6F0]',         // Paragraph background color
     },
 
     // Custom CSS Variables (for advanced customization)
     cssVariables: {
-        '--primary-bg': '#111827',           // #111827 (gray-900)
-        '--secondary-bg': '#1f2937',        // #1f2937 (gray-800)
-        '--accent-bg': '#800000',           // #800000 (Maroon)
-        '--accent-hover': '#660000',        // #660000 (Dark Maroon Hover)
-        '--primary-text': '#800000',        // #800000 (Maroon)
-        '--secondary-text': '#d1d5db',      // #d1d5db (gray-300)
-        '--accent-text': '#800000',         // #800000 (Maroon)
-        '--muted-text': '#9ca3af',          // #9ca3af (gray-400)
-        '--border-color': '#C0C0C0',        // #C0C0C0 (Silver)
-        '--custom-theme': '#C0C0C0',        // #C0C0C0 (Silver)
+        '--primary-bg': '#0B1F3A',
+        '--secondary-bg': '#AAB7C4',
+        '--accent-bg': '#CC5500',
+        '--accent-hover': '#A84400',
+        '--primary-text': '#0B1F3A',
+        '--secondary-text': '#5A6B7C',
+        '--accent-text': '#CC5500',
+        '--muted-text': '#5A6B7C',
+        '--border-color': '#AAB7C4',
+        '--custom-theme': '#FDF6F0',
     }
 }
 
 // Quick color presets for different themes
 export const themePresets = {
-    // Dark Elegant (Current)
+    // Burnt Orange + Navy (Default)
     darkElegant: {
         backgrounds: {
-            primary: 'bg-gray-900',
-            secondary: 'bg-gray-800',
-            accent: 'bg-[#008080]',
+            primary: 'bg-[#0B1F3A]',
+            secondary: 'bg-[#FDF6F0]',
+            accent: 'bg-[#CC5500]',
         },
         text: {
-            primary: 'text-white',
-            secondary: 'text-gray-300',
-            accent: 'text-[#008080]',
+            primary: 'text-[#0B1F3A]',
+            secondary: 'text-[#5A6B7C]',
+            accent: 'text-[#CC5500]',
         }
     },
 
     // Light Romantic
     lightRomantic: {
         backgrounds: {
-            primary: 'bg-rose-50',
-            secondary: 'bg-white',
-            accent: 'bg-rose-500',
+            primary: 'bg-[#FDF6F0]',
+            secondary: 'bg-[#FDF6F0]',
+            accent: 'bg-[#CC5500]',
         },
         text: {
-            primary: 'text-gray-900',
-            secondary: 'text-gray-600',
-            accent: 'text-rose-600',
+            primary: 'text-[#0B1F3A]',
+            secondary: 'text-[#5A6B7C]',
+            accent: 'text-[#CC5500]',
         }
     },
 
     // Warm Autumn
     warmAutumn: {
         backgrounds: {
-            primary: 'bg-amber-50',
-            secondary: 'bg-orange-100',
-            accent: 'bg-orange-500',
+            primary: 'bg-[#FDF6F0]',
+            secondary: 'bg-[#AAB7C4]',
+            accent: 'bg-[#CC5500]',
         },
         text: {
-            primary: 'text-amber-900',
-            secondary: 'text-amber-700',
-            accent: 'text-orange-600',
+            primary: 'text-[#0B1F3A]',
+            secondary: 'text-[#5A6B7C]',
+            accent: 'text-[#CC5500]',
         }
     }
 }

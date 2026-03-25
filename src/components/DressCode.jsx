@@ -64,8 +64,8 @@ const DressCode = () => {
             </span>
           </h3>
           {/* General Dress Code Description */}
-          <p className="text-base sm:text-lg font-albert font-thin mt-4 mb-4 dress-code-description">
-            Strictly formal. No slippers, shorts, jeans, tshirt, or white color.
+          <p className="text-sm sm:text-base font-albert font-thin mt-4 mb-4 dress-code-description whitespace-pre-line leading-relaxed">
+            {dresscode.mainDressCode?.description ?? 'Dress code details will be added soon.'}
           </p>
         </div>
       </div>
@@ -74,43 +74,39 @@ const DressCode = () => {
       <div ref={dressCodeContentRef} className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto">
         {/* Image and Swatches Side by Side */}
         {dresscode.sections && dresscode.sections.length > 0 && (
-          <div className="flex flex-row items-center justify-center gap-6 sm:gap-8 w-full">
+          <div className="flex flex-col items-center justify-center gap-8 w-full">
             {/* Section Image */}
-            <div className="flex-shrink-0 dress-code-image-container">
-              <img 
-                src="/assets/images/dresscode/dress.png" 
-                alt="Dress Code" 
+            <div className="flex-shrink-0 dress-code-image-container w-full max-w-[360px] sm:max-w-[420px]">
+              <img
+                src="/assets/images/dresscode/guest (3).png"
+                alt="Dress Code"
                 className="w-full h-auto object-contain dress-code-image"
               />
             </div>
-            
-            {/* Color Palette - Burgundy Red and Black */}
+
+            {/* Color Palette (swatches under image) */}
             {(() => {
-              const dressCodeColors = [
-                { name: "Burgundy Red", hex: "#800020" },
-                { name: "Black", hex: "#000000" },
-                { name: "Dark Burgundy", hex: "#722F37" }
-              ];
+              const dressCodeColors = dresscode.sections?.[0]?.colors ?? []
               return (
-                <div className="flex flex-col items-center justify-center flex-shrink-0">
+                <div className="flex flex-row items-center justify-center -space-x-3 sm:-space-x-4 overflow-visible">
                   {dressCodeColors.map((color, colorIndex) => (
-                    <div 
-                      key={colorIndex} 
-                      className={`relative group cursor-pointer ${colorIndex > 0 ? 'color-swatch' : ''}`}
+                    <div
+                      key={colorIndex}
+                      className="relative group cursor-pointer flex items-center justify-center"
                       title={color.name}
                     >
-                      <div 
+                      <div
                         className="w-12 h-12 sm:w-16 sm:h-16 max-w-12 max-h-12 rounded-full border-2 border-white/30 shadow-md transition-transform duration-200 hover:scale-110"
                         style={{ backgroundColor: color.hex }}
                       />
                       {/* Tooltip on hover */}
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-[#171717] text-white text-xs font-albert rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-[#0B1F3A] text-white text-xs font-albert rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
                         {color.name}
                       </div>
                     </div>
                   ))}
                 </div>
-              );
+              )
             })()}
           </div>
         )}

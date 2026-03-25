@@ -139,8 +139,8 @@ body {
   font-family: 'Elsie Swash Caps', cursive;
   font-weight: 400;
   line-height: 1.6;
-  color: #ad8369;
-  background-color: #f6f1ee; /* Calendar background color */
+  color: #0B1F3A;
+  background-color: #FDF6F0; /* Calendar background color */
 }
 
 @layer base {
@@ -157,11 +157,11 @@ body {
   }
   
   .wedding-text {
-    /* color: #ad8369; */
+    /* color: #5A6B7C; */
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #bfa094 0%, #a18072 100%);
+    background: linear-gradient(135deg, #CC5500 0%, #0B1F3A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

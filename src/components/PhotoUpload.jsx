@@ -59,12 +59,10 @@ const PhotoUpload = () => {
               {/* QR Code Image - 50% width on mobile, full width on 992px+ */}
               <div className="w-1/2 lg-custom:w-full lg-custom:flex lg-custom:justify-center">
                 <div className="w-full relative upload-qr-container" style={{ maxWidth: '350px' }}>
-                  <div className="bg-white p-4 rounded-lg shadow-md w-full h-full flex items-center justify-center">
-                    <img 
-                      src="/assets/images/qr/qr-code.png" 
-                      alt="Upload QR Code" 
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="flex min-h-[200px] w-full items-center justify-center rounded-lg border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/80 p-6 shadow-sm sm:min-h-[240px]">
+                    <p className="text-center font-tebranos text-xl sm:text-2xl tracking-wide text-[#0B1F3A]/80">
+                      TO BE ADDED
+                    </p>
                   </div>
                 </div>
               </div>
@@ -72,7 +70,7 @@ const PhotoUpload = () => {
               {/* Upload Details - 50% width on mobile, full width on 992px+ */}
               <div className="w-1/2 lg-custom:w-full lg-custom:h-fit lg-custom:flex lg-custom:flex-col lg-custom:justify-center lg-custom:items-center flex flex-col justify-between text-left lg-custom:text-center py-4 sm:py-6 upload-content-container">
                 {/* Description */}
-                <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-left lg-custom:text-center">
+                <p className="text-sm sm:text-base font-albert font-thin text-[#0B1F3A] mb-4 text-left lg-custom:text-center">
                   Share your photos and videos from our special day.
                 </p>
 

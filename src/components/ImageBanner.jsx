@@ -39,12 +39,24 @@ const ImageBanner = ({ src, alt = "Banner image" }) => {
           <div className="absolute bottom-0 left-0 w-full flex flex-col justify-center items-center pb-0.5 z-10">
             <div className="w-full text-center">
               {/* The in Ballet font */}
-              <h1 className="font-ballet text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-2" style={{ color: '#333333' }}>
+              <h1
+                className="font-ballet text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-2"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #FFF8E7 0%, #E8C547 32%, #C9A227 65%, #8B6914 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35))',
+                  display: 'inline-block',
+                  lineHeight: 1,
+                }}
+              >
                 The
               </h1>
               {/* Details in Tebranos font */}
               <h2 className="font-tebranos text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase mb-4 -mt-6" style={{ 
-                color: '#800000'
+                color: '#CC5500'
               }}>
                 Details
               </h2>

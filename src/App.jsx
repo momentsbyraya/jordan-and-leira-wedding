@@ -26,10 +26,10 @@ function AppContent() {
     const preloadImages = async () => {
       const criticalImages = [
         // NavIndex images - all prenup photos used on home page
-        '/assets/images/prenup/APA_0856.JPG',  // Polaroid image
-        '/assets/images/prenup/APA_9774.JPG',  // RSVP container
-        '/assets/images/prenup/APA_0384.JPG',  // Moments polaroid 1
-        '/assets/images/prenup/APA_0141.JPG',  // Moments polaroid 2
+        '/assets/images/prenup/HAN_1994 copy.jpg',        // Polaroid image
+        '/assets/images/prenup/HAN_1922 copy (1).jpg',    // RSVP container
+        '/assets/images/prenup/HAN_5426 copy.jpg',        // Moments polaroid 1
+        '/assets/images/prenup/HAN_1954 copy.jpg',        // Moments polaroid 2
         // NavIndex graphics - all decorative elements
         '/assets/images/graphics/midnight-blue-envelope.png',
         '/assets/images/graphics/flower-1.png',
@@ -122,9 +122,7 @@ function AppContent() {
     preloadImages()
   }, [])
 
-  const handleEnvelopeOpen = async () => {
-    // Start playing music when invitation is revealed (user interaction allows auto-play)
-    await play()
+  const handleEnvelopeOpen = () => {
     setShowInvitation(true)
     navigate('/')
   }
@@ -142,7 +140,12 @@ function AppContent() {
       )}
       {/* OpeningScreen - shows after loading, before invitation */}
       {!isLoading && !showInvitation && (
-        <OpeningScreen onEnvelopeOpen={handleEnvelopeOpen} />
+        <OpeningScreen
+          onEnvelopeOpen={handleEnvelopeOpen}
+          onStartMusic={() => {
+            play()
+          }}
+        />
       )}
       {/* Main content - shows after invitation is opened */}
       {!isLoading && showInvitation && (

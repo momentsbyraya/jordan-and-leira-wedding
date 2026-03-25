@@ -1,25 +1,32 @@
 {
+  "heroSlides": [
+    "/assets/images/venues/Screenshot 2026-03-23 081552.png",
+    "/assets/images/venues/Screenshot 2026-03-23 081608.png",
+    "/assets/images/venues/Screenshot 2026-03-23 081623.png",
+    "/assets/images/venues/Screenshot 2026-03-23 081645.png",
+    "/assets/images/venues/unnamed (2).webp"
+  ],
   "ceremony": {
-    "name": "San Agustin Church",
-    "address": "General Luna St",
-    "city": "Intramuros",
-    "state": "Manila",
-    "zip": "1002, Philippines",
+    "name": "The Grounds Events Place",
+    "address": "Sitio Gulod, Sapang Palay, Proper",
+    "city": "SJDM",
+    "state": "Bulacan",
+    "zip": "3024, Philippines",
     "time": "3:30 PM",
-    "details": "Schedule: 3:30 PM to 4:30 PM",
-    "googleMapsUrl": "https://maps.app.goo.gl/SanAgustinChurch",
-    "directionsUrl": "https://maps.app.goo.gl/SanAgustinChurch"
+    "googleMapsUrl": "https://share.google/FgjOXlmAYOgWZO8VZ",
+    "directionsUrl": "https://share.google/FgjOXlmAYOgWZO8VZ",
+    "image": "/assets/images/venues/ceremony.jpg"
   },
   "reception": {
-    "name": "Villa Escudero Gardens",
-    "address": "San Pablo City", 
-    "city": "Quezon",
-    "state": "Laguna",
-    "zip": "4000, Philippines",
-    "time": "5:00 PM",
-    "details": "Schedule: 5:00 PM to 10:00 PM",
-    "landmark": "Garden Reception",
-    "googleMapsUrl": "https://maps.app.goo.gl/VillaEscudero",
-    "directionsUrl": "https://maps.app.goo.gl/VillaEscudero"
+    "name": "The Grounds Events Place",
+    "address": "Sitio Gulod, Sapang Palay, Proper",
+    "city": "SJDM",
+    "state": "Bulacan",
+    "zip": "3024, Philippines",
+    "time": "6:00 PM",
+    "landmark": "Main Hall",
+    "googleMapsUrl": "https://share.google/FgjOXlmAYOgWZO8VZ",
+    "directionsUrl": "https://share.google/FgjOXlmAYOgWZO8VZ",
+    "image": "/assets/images/venues/reception.jpg"
   }
 } 

@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useMemo, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MapPin, Clock, ArrowLeft, ArrowRight, ChevronDown, UtensilsCrossed, Palette, Users, Mail, Baby, Car, Camera, Gift, Heart } from 'lucide-react'
-import { themeConfig } from '../../config/themeConfig'
 import { faq as faqData } from '../../data'
 import ImageBanner from '../ImageBanner'
 import Divider from '../Divider'
@@ -43,12 +42,18 @@ const Details = () => {
       'Wedding Ceremony Location': MapPin,
       'Wedding Reception Location': UtensilsCrossed,
       'What time is the wedding?': Clock,
+      'What time should I arrive?': Clock,
       'What is the wedding theme and dress code?': Palette,
       'Can I bring a plus one?': Users,
+      "Can I bring someone else if my companion can't attend?": Users,
       'Is RSVP required?': Mail,
+      'When is the RSVP deadline?': Mail,
       'Are children allowed?': Baby,
+      'Are children allowed at the wedding?': Baby,
       'Is parking available?': Car,
       'Can guests take photos or videos during the ceremony?': Camera,
+      'Snap & Share': Camera,
+      "If you have questions that haven't been addressed here, who should we contact?": Mail,
       'Is there a gift registry?': Gift,
       'Final Reminder': Heart
     }
@@ -61,48 +66,16 @@ const Details = () => {
     // Check for partial matches (in case of emoji prefixes or slight variations)
     for (const [key, Icon] of Object.entries(questionIconMap)) {
       if (question.includes(key) || key.includes(question.trim())) {
-        return { Icon, text: question.replace(/^[📍🥂⏰🎨👥✉️👶🚗📸🎁❤️]\s*/, '').trim() }
+        return { Icon, text: question.replace(/^[📍🥂⏰🎨👥✉️👶🚗📸🎁❤️🕰📩📞]\s*/, '').trim() }
       }
     }
     
     // Remove any emoji at the start if present
-    const emojiPattern = /^[📍🥂⏰🎨👥✉️👶🚗📸🎁❤️]\s*/
+    const emojiPattern = /^[📍🥂⏰🎨👥✉️👶🚗📸🎁❤️🕰📩📞]\s*/
     const cleanText = question.replace(emojiPattern, '').trim()
     
     return { Icon: null, text: cleanText }
   }
-
-  // Random background position, rotation, and flip - Base layer (old-book-2)
-  const bgStyleBase = useMemo(() => {
-    const posX = Math.random() * 100 // 0% to 100%
-    const posY = Math.random() * 100 // 0% to 100%
-    const rotation = (Math.random() * 360) - 180 // -180 to 180 degrees
-    const flipX = Math.random() > 0.5 ? -1 : 1 // Random horizontal flip
-    const flipY = Math.random() > 0.5 ? -1 : 1 // Random vertical flip
-    return {
-      backgroundImage: 'url(/assets/images/graphics/old-book-2.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: `${posX}% ${posY}%`,
-      transform: `rotate(${rotation}deg) scaleX(${flipX}) scaleY(${flipY})`,
-      opacity: 0.75
-    }
-  }, [])
-
-  // Random background position, rotation, and flip - Top layer (old-book-bg)
-  const bgStyle = useMemo(() => {
-    const posX = Math.random() * 100 // 0% to 100%
-    const posY = Math.random() * 100 // 0% to 100%
-    const rotation = (Math.random() * 360) - 180 // -180 to 180 degrees
-    const flipX = Math.random() > 0.5 ? -1 : 1 // Random horizontal flip
-    const flipY = Math.random() > 0.5 ? -1 : 1 // Random vertical flip
-    return {
-      backgroundImage: 'url(/assets/images/graphics/old-book-bg.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: `${posX}% ${posY}%`,
-      transform: `rotate(${rotation}deg) scaleX(${flipX}) scaleY(${flipY})`,
-      opacity: 0.5
-    }
-  }, [])
 
   useEffect(() => {
     // Set initial hidden states to prevent glimpse
@@ -261,11 +234,11 @@ const Details = () => {
       ref={sectionRef}
       id="details"
       data-section="details"
-      className="relative pb-20 w-full overflow-hidden bg-white details-section"
+      className="relative pb-20 w-full overflow-hidden bg-[#FDF6F0] details-section"
     >
       {/* Prenup Image at Top */}
       <ImageBanner 
-        src="/assets/images/prenup/prenup-1.png" 
+        src="/assets/images/prenup/HAN_2253 copy (1).jpg"
         alt="Prenup photo"
       />
       
@@ -275,7 +248,7 @@ const Details = () => {
           {/* Header Section */}
           <div className="text-center">
             <div ref={headerContentRef}>
-              <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg font-albert font-thin text-[#CC5500] max-w-3xl mx-auto leading-relaxed">
                 Join us as we exchange our vows
               </p>
               <Divider />
@@ -297,7 +270,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800000" 
+            stroke="#CC5500" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -323,7 +296,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800000" 
+            stroke="#CC5500" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -335,9 +308,9 @@ const Details = () => {
       <div ref={photoSectionRef}>
       <PhotoSection
         images={[
-          { src: '/assets/images/prenup/prenup-4.jpg', alt: 'Photo 1', label: 'Memories' },
-          { src: '/assets/images/prenup/prenup-5.jpg', alt: 'Photo 2', label: 'Together' },
-          { src: '/assets/images/prenup/prenup-6.jpg', alt: 'Photo 3', label: 'Love' }
+          { src: '/assets/images/prenup/HAN_1994 copy.jpg', alt: 'Photo 1', label: 'Memories' },
+          { src: '/assets/images/prenup/HAN_1922 copy (1).jpg', alt: 'Photo 2', label: 'Together' },
+          { src: '/assets/images/prenup/HAN_5426 copy.jpg', alt: 'Photo 3', label: 'Love' }
         ]}
         paragraph="This is where our journey began, a moment captured in time that will forever hold a special place in our hearts."
         backgroundTexts={['Forever', 'Always', 'Together', 'Love', 'Us']}
@@ -354,7 +327,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800000" 
+            stroke="#CC5500" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -393,15 +366,15 @@ const Details = () => {
                 return (
                   <div key={index}>
                     <div className="mb-2">
-                      <p className="text-base sm:text-lg font-albert text-[#f5f5f0] mb-2 faq-question-bold">
+                      <p className="text-base sm:text-lg font-albert text-[#FDF6F0] mb-2 faq-question-bold">
                         Q: {text}
                       </p>
-                      <p className="text-sm sm:text-base font-albert font-thin text-[#f5f5f0] whitespace-pre-line">
+                      <p className="text-sm sm:text-base font-albert font-thin text-[#FDF6F0] whitespace-pre-line">
                         A: {item.answer}
                       </p>
                     </div>
                     {index < faqItems.faqData.length - 1 && (
-                      <div className="h-px bg-[#f5f5f0]/30 mt-6"></div>
+                      <div className="h-px bg-[#FDF6F0]/30 mt-6"></div>
                     )}
                   </div>
                 )
@@ -439,7 +412,7 @@ const Details = () => {
           navigate('/')
         }
       }}
-      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#333333] text-white rounded-full shadow-lg hover:bg-[#333333]/80 hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
+      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#0B1F3A] text-white rounded-full shadow-lg hover:bg-[#0B1F3A]/80 hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
       aria-label="Back to home"
     >
       <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />

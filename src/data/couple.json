@@ -1,23 +1,28 @@
 {
   "bride": {
-    "firstName": "Praise Joy",
-    "lastName": "Rita",
-    "fullName": "Praise Joy D. Rita"
+    "firstName": "Leira",
+    "lastName": "Angel",
+    "fullName": "Leira Angel"
   },
   "groom": {
-    "firstName": "Gil Carlos",
-    "lastName": "Santiago",
-    "fullName": "Gil Carlos T. Santiago"
+    "firstName": "Jordan",
+    "lastName": "Paquinol",
+    "fullName": "Jordan Paquinol"
   },
-  "together": "Jon & Sofia",
-  "nickname": "Jon and Sofia",
+  "together": "Jordan & Leira",
+  "nickname": "Jordan and Leira",
   "wedding": {
-    "date": "2026-11-06",
+    "date": "2026-06-26",
     "time": "3:30 PM",
     "dayOfWeek": "Friday",
-    "month": "November",
-    "day": "6",
+    "month": "June",
+    "day": "26",
     "year": "2026"
+  },
+  "rsvp": {
+    "deadline": "2026-05-30",
+    "message": "Please RSVP by May 30, 2026",
+    "formUrl": "https://forms.gle/V1hYqW3P9KtUJdsGA"
   }
 }
 

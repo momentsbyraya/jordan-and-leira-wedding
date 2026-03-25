@@ -1,117 +1,125 @@
 {
   "couple": {
     "groom": {
-      "name": "Jon Michael R. Dela Cruz"
+      "name": "Jordan Paquinol"
     },
     "bride": {
-      "name": "Sofia Marie A. Santos"
+      "name": "Leira Angel"
     }
   },
   "parents": {
     "groom": {
-      "father": "Roberto Dela Cruz",
-      "mother": "Maria Elena Dela Cruz"
+      "lines": [
+        "Ricardo Paler Paquinol",
+        "Joybell Rempos Paquinol ✝️",
+        "(Shechem Paquinol Sulatorio)"
+      ]
     },
     "bride": {
-      "father": "Antonio Santos",
-      "mother": "Carmen Santos"
+      "lines": [
+        "Ariel Enriquez Angel ✝️",
+        "(Arlan Reyniel Fernando Angel)",
+        "Lani Fernando Angel"
+      ]
     }
   },
   "entourageList": [
     {
       "category": "Principal Sponsors",
       "ninong": [
-        "Miguel Torres",
-        "Carlos Mendoza",
-        "Fernando Reyes",
-        "Rafael Villanueva",
-        "Eduardo Martinez",
-        "Jose Antonio Garcia",
-        "Dr. Luis Fernando Ramos",
-        "Ricardo Alcantara",
-        "Manuel Cruz Sr.",
-        "Alberto Fernandez",
-        "Rodrigo Bautista"
+        "Reynaldo E. Angel Jr.",
+        "Edwin M. Samson",
+        "Decky Jazer P. Margaja",
+        "Marco E. Señido",
+        "Victor C. Marcelo",
+        "Marcelo P. Paquinol",
+        "Julito P. Paquinol Sr.",
+        "Mari Chandris U. Barbaza",
+        "Arsenia D. Estinos"
       ],
       "ninang": [
-        "Isabel Torres",
-        "Maria Cristina Abad",
-        "Patricia Buenaventura",
-        "Rosa Martinez",
-        "Angelica Santos",
-        "Carmen Dela Rosa",
-        "Atty. Maria Elena Castillo",
-        "Catherine Pineda",
-        "Monica Reyes",
-        "Grace Fernandez",
-        "Lucia Villanueva"
+        "Christian E. Neo",
+        "Pamela De Guzman-Correa",
+        "Rachelle Joy A. Margaja",
+        "Eileen Q. Tejano",
+        "Erlinda F. Rectra",
+        "Lorie A. Paquinol",
+        "Erlina G. Paquinol",
+        "Lilibeth F. Bustamante",
+        "Vivian S. Flores"
       ]
     },
     {
       "category": "Secondary Sponsors",
       "groomsmen": [
-        "Mark Anthony Rivera",
-        "Christian Mendoza",
-        "Jose Miguel Cruz",
-        "Michael Dela Paz",
-        "Benedicto Tan",
-        "Zachary Xavier Reyes",
-        "Jonathan Martinez"
+        "Aaron Christopher C. Ilusorio",
+        "Thomas Joseph G. Dela Cruz",
+        "Jezer E. De Vera",
+        "Kervin Karlo A. Francisco",
+        "Ricardo R. Paquinol Jr.",
+        "Louie L. Leron",
+        "Rowell M. Lanada",
+        "Jeric Jan P. Sulatorio",
+        "John Philip F. Rectra"
       ],
       "bridesmaid": [
-        "Isabella Torres",
-        "Amanda Fernandez",
-        "Patricia Ann Cabrera",
-        "Diana Rose Ocampo",
-        "Lynette Macapagal",
-        "Francesca Dela Paz",
-        "Katherine Gomez"
+        "Jeunne Ivy D. Angel",
+        "Denielle Q. Samson",
+        "Lindsay Anne S. Espiritu",
+        "Jana Sta. M. Teresa",
+        "Janelle M. Sta. Teresa",
+        "Aira Marcelo - Leron",
+        "Gellaine L. Fernando",
+        "Magnolia Ashley E. Magno",
+        "Patricia Clare F. Rectra"
       ]
     },
     {
       "category": "Bestman",
-      "names": [
-        "Daniel Dela Cruz"
-      ]
+      "names": ["Wynbert Genesis C. Esguerra"]
     },
     {
-      "category": "Maid of Honor",
-      "names": [
-        "Maria Isabel Santos"
-      ]
-    },
-    {
-      "category": "Bible Bearer",
-      "names": [
-        "Gabriel Tan"
-      ]
+      "category": "Matron of Honor",
+      "names": ["Jessa P. Esguerra"]
     },
     {
       "category": "Ring Bearer",
-      "names": [
-        "Ethan James Santos"
-      ]
+      "names": ["Zeke Elijah B. Paquinol"]
     },
     {
       "category": "Coin Bearer",
-      "names": [
-        "Nathaniel Soledad Cruz"
-      ]
+      "names": ["Clarence John P. Sulatorio"]
+    },
+    {
+      "category": "Bible Bearer",
+      "names": ["Eonn Yeshua C. Neo"]
     },
     {
       "category": "Flower Girls",
       "names": [
-        "Adrian Alvarez",
-        "Andrew Dimaculangan",
-        "Justin Ford Reyes"
-      ]
-    },
-    {
-      "category": "Here comes the bride",
-      "names": [
-        "Tita Rosario Torres",
-        "Vincent Torres"
+        "Aisha Lyrezelle A. Margaja",
+        "Zemira Cara B. Paquinol",
+        "Amaris Dane P. Angel",
+        "Elyza Rose M. Leron"
       ]
     }
-  ]
+  ],
+  "ceremonyRoles": {
+    "cord": [
+      "Jeunne Ivy D. Angel and Aaron Christopher C. Ilusorio",
+      "Denielle Q. Samson and Thomas Joseph G. Dela Cruz"
+    ],
+    "veil": [
+      "Aira M. Leron and Louie L. Leron",
+      "Jana M. Sta. Teresa and Kervin Karlo A. Francisco"
+    ],
+    "candle": [
+      "Jezer E. De Vera and Lindsay Anne S. Espiritu",
+      "Gellaine L. Fernando and Rowell M. Lanada"
+    ]
+  },
+  "banners": {
+    "groom": "Hadassah Shechem C. Paquinol and Yisrael Lavish C. Paquinol",
+    "bride": "Adam Yue C. Angel and Ariah Lyrezelle A. Margaja"
+  }
 }

@@ -3,11 +3,12 @@ import { gsap } from 'gsap'
 import { couple } from '../data'
 import { weddingConfig } from '../config/weddingConfig'
 
-function OpeningScreen({ onEnvelopeOpen }) {
+function OpeningScreen({ onEnvelopeOpen, onStartMusic }) {
   const envelopeRef = useRef(null)
   const openingSectionRef = useRef(null)
   const clickMeRef = useRef(null)
   const coupleNameRef = useRef(null)
+  const hasStartedMusicRef = useRef(false)
 
   // Animate text and envelope on mount
   useEffect(() => {
@@ -56,6 +57,14 @@ function OpeningScreen({ onEnvelopeOpen }) {
     
     if (envelope) {
       envelope.classList.add('active')
+
+      // Start background music immediately from the user click
+      // (avoids autoplay restrictions that can block play() after timeouts)
+      if (!hasStartedMusicRef.current && onStartMusic) {
+        hasStartedMusicRef.current = true
+        onStartMusic()
+      }
+
       // Letter translation: 0.3s delay + 0.8s duration = 1.1s total
       // Wait 1 second after letter finishes translating
       setTimeout(() => {
@@ -87,10 +96,11 @@ function OpeningScreen({ onEnvelopeOpen }) {
           backgroundRepeat: 'no-repeat'
         }}
       />
+      <div className="absolute inset-0 z-[1] bg-[#0B1F3A]/70" />
       <section className="cssletter flex flex-col items-center relative z-10 w-full py-8" style={{ minHeight: 'auto', height: 'auto' }}>
         {/* Click me text */}
         <div ref={clickMeRef} className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center click-me-container">
-          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" style={{ fontFamily: 'var(--letter-font)', color: '#171717' }}>
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" style={{ fontFamily: 'var(--letter-font)', color: '#CC5500' }}>
             Click me!
           </p>
         </div>
@@ -136,7 +146,7 @@ function OpeningScreen({ onEnvelopeOpen }) {
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script leading-tight"
             style={{ 
-              color: '#171717', 
+              color: '#FDF6F0', 
               fontSize: 'clamp(1.5rem, 4vw, 48px)',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
             }}
@@ -146,7 +156,7 @@ function OpeningScreen({ onEnvelopeOpen }) {
           <p 
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"
             style={{ 
-              color: '#171717', 
+              color: '#FDF6F0', 
               fontSize: 'clamp(1rem, 2.5vw, 30px)',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
             }}
