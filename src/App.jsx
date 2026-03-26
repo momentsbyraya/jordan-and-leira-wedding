@@ -144,6 +144,8 @@ function AppContent() {
           onEnvelopeOpen={handleEnvelopeOpen}
           onStartMusic={() => {
             play()
+            // Safety retry shortly after user interaction in case audio init lags
+            setTimeout(() => play(), 250)
           }}
         />
       )}
