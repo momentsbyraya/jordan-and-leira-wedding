@@ -31,7 +31,7 @@ function AppContent() {
         '/assets/images/prenup/HAN_5426 copy.jpg',        // Moments polaroid 1
         '/assets/images/prenup/HAN_1954 copy.jpg',        // Moments polaroid 2
         // NavIndex graphics - all decorative elements
-        '/assets/images/graphics/midnight-blue-envelope.png',
+        '/assets/images/graphics/for envelopes (13).png',
         '/assets/images/graphics/flower-1.png',
         '/assets/images/graphics/flower-3.png',
         '/assets/images/graphics/flower-4.png',

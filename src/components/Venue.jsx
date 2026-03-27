@@ -115,9 +115,12 @@ const Venue = () => {
           </span>
         </h3>
 
-        <div className="relative z-[1] text-sm sm:text-base md:text-lg font-albert text-white max-w-xl sm:max-w-2xl mx-auto leading-relaxed space-y-4">
+        <div className="relative z-[1] text-sm sm:text-base md:text-lg text-white max-w-xl sm:max-w-2xl mx-auto leading-relaxed space-y-4">
+          <p className="venue-where-name imperial-script-regular">
+            {ceremony.name}
+          </p>
           <p className="font-medium not-italic">
-            Ceremony: 3:30 PM <span className="font-light opacity-90">|</span> Reception: 6:00 PM
+            Ceremony: {ceremony.time} <span className="font-light opacity-90">|</span> Reception: {reception.time}
           </p>
         </div>
 

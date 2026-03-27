@@ -509,13 +509,13 @@ const Moments = () => {
               className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-36 sm:h-40 bg-gradient-to-b from-black/45 via-black/20 to-transparent"
               aria-hidden
             />
-            {/* Navy bottom fade + cream tail (matches Details ImageBanner — no white band) */}
+            {/* Navy bottom fade + cream tail (exactly same as Details ImageBanner) */}
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-36 md:h-40 bg-gradient-to-b from-transparent via-[#0B1F3A]/55 to-[#0B1F3A]"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 sm:h-36 md:h-40 bg-gradient-to-b from-transparent via-[#0B1F3A]/55 to-[#0B1F3A]"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-14 sm:h-16 bg-gradient-to-b from-transparent to-[#FDF6F0]"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-14 sm:h-16 bg-gradient-to-b from-transparent to-[#FDF6F0]"
               aria-hidden
             />
           </div>

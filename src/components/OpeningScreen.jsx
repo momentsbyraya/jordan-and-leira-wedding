@@ -142,7 +142,9 @@ function OpeningScreen({ onEnvelopeOpen, onStartMusic }) {
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
             }}
           >
-            {couple.nickname}
+            <span className="block">{couple.groom.fullName}</span>
+            <span className="block">&amp;</span>
+            <span className="block">{couple.bride.fullName}</span>
           </h2>
           <p 
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"

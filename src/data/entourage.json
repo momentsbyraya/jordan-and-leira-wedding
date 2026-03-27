@@ -10,16 +10,20 @@
   "parents": {
     "groom": {
       "lines": [
-        "Ricardo Paler Paquinol",
-        "Joybell Rempos Paquinol ✝️",
-        "(Shechem Paquinol Sulatorio)"
+        "Mr. Ricardo Paler Paquinol",
+        "and the late Mrs. Joybel Rempos Paquinol ✝️",
+        "Represented by",
+        "Shechem Paquinol Sulatorio",
+        "Sister of the Groom"
       ]
     },
     "bride": {
       "lines": [
-        "Ariel Enriquez Angel ✝️",
-        "(Arlan Reyniel Fernando Angel)",
-        "Lani Fernando Angel"
+        "The Late Mr. Ariel Enriquez Angel ✝️",
+        "and Mrs. Lani Fernando Angel",
+        "Escorted by",
+        "Arlan Reynel Fernando Angel",
+        "Brother of the Bride"
       ]
     }
   },
@@ -27,38 +31,38 @@
     {
       "category": "Principal Sponsors",
       "ninong": [
-        "Reynaldo E. Angel Jr.",
-        "Edwin M. Samson",
-        "Decky Jazer P. Margaja",
-        "Marco E. Señido",
-        "Victor C. Marcelo",
-        "Marcelo P. Paquinol",
-        "Julito P. Paquinol Sr.",
-        "Mari Chandris U. Barbaza",
-        "Arsenia D. Estinos"
-      ],
-      "ninang": [
         "Christian E. Neo",
-        "Pamela De Guzman-Correa",
+        "Pamelae Guzman-Correa",
         "Rachelle Joy A. Margaja",
         "Eileen Q. Tejano",
         "Erlinda F. Rectra",
         "Lorie A. Paquinol",
-        "Erlinda Paquinol",
+        "Erlin G. Paquinol",
+        "Richandris U. Barbaza",
         "Lilibeth F. Bustamante",
-        "Vivian S. Flores"
+        "Arsenia D. Estinos",
+        "Yivans Flores"
+      ],
+      "ninang": [
+        "Reynaldo E. Angel Jr.",
+        "Edvin M. Samson",
+        "Decky Jazer P. Margaja",
+        "Marco E. Sejido",
+        "Victor C. Marcelo",
+        "Marcelo P. Paquinol",
+        "Julito P. Paquinol Sr."
       ]
     },
     {
       "category": "Secondary Sponsors",
       "groomsmen": [
+        "John Philip F. Rectra",
         "Jeric Jan P. Sulatorio",
-        "John Philip F. Rectra"
+        "Patricia Clare F. Rectra"
       ],
       "bridesmaid": [
-        "Partner of Patricia Rectra",
-        "Magnolia Ashley E. Magno",
-        "Patricia Clare F. Rectra"
+        "Janelle M. Sta. Teresa",
+        "Magnolia Ashley E. Magno"
       ]
     },
     {
@@ -93,16 +97,16 @@
   ],
   "ceremonyRoles": {
     "cord": [
-      "Jeunne Ivy D. Angel and Aaron Christopher C. Ilusorio",
+      "Aaron Christopher C. Ilusorio and Jeunne Ivy D. Angel",
       "Denielle Q. Samson and Thomas Joseph G. Dela Cruz"
     ],
     "veil": [
-      "Aira M. Leron and Louie L. Leron",
-      "Jana M. Sta. Teresa and Kervin Karlo A. Francisco"
+      "Louie L. Leron and Aira M. Leron",
+      "Kervin Karlo A. Francisco and Jana M. Sta. Teresa"
     ],
     "candle": [
-      "Jezer E. De Vera and Lindsay Anne S. Espiritu",
-      "Gellaine L. Fernando and Rowell M. Lanada"
+      "Lindsay Anne S. Espiritu and Jezer E. De Vera",
+      "Rowel M. Landa and Gelaine L. Fernando"
     ]
   },
   "banners": {
