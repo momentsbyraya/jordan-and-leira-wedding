@@ -234,7 +234,7 @@ const Details = () => {
       ref={sectionRef}
       id="details"
       data-section="details"
-      className="relative pb-20 w-full overflow-hidden bg-[#FDF6F0] details-section"
+      className="relative pb-20 w-full overflow-x-clip overflow-y-visible bg-[#FDF6F0] details-section"
     >
       {/* Prenup Image at Top */}
       <ImageBanner 
@@ -248,7 +248,7 @@ const Details = () => {
           {/* Header Section */}
           <div className="text-center">
             <div ref={headerContentRef}>
-              <p className="text-base sm:text-lg font-albert font-thin text-[#CC5500] max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg font-albert font-thin text-[#0B1F3A] max-w-3xl mx-auto leading-relaxed">
                 Join us as we exchange our vows
               </p>
               <Divider />
@@ -270,7 +270,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#CC5500" 
+            stroke="#0B1F3A" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -296,7 +296,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#CC5500" 
+            stroke="#0B1F3A" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -327,7 +327,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#CC5500" 
+            stroke="#0B1F3A" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"

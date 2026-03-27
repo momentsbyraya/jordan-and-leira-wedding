@@ -12,6 +12,7 @@ export default {
       colors: {
         primary: "#CC5500",
         secondary: "#0B1F3A",
+        navy: "#0B1F3A",
         accent: "#AAB7C4",
         cream: "#FDF6F0",
         'wedding': {

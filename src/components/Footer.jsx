@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer 
-      className="w-full pb-4 pt-4 transition-colors duration-300 bg-[#0B1F3A] hover:bg-[#0B1F3A]/95 active:bg-[#0B1F3A]/95 cursor-pointer"
+      className="w-full border-t-2 border-[#C9A227] pb-4 pt-4 transition-colors duration-300 bg-[#0B1F3A] hover:bg-[#0B1F3A]/95 active:bg-[#0B1F3A]/95 cursor-pointer"
       onClick={handleFooterClick}
     >
       {/* Footer text */}

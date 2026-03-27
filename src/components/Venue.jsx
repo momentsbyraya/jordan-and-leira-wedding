@@ -27,15 +27,6 @@ const Venue = () => {
       ? venuesData.heroSlides
       : fallbackSlides
 
-  const addressLine = [
-    ceremony.address && `${ceremony.address}, `,
-    ceremony.city,
-    ceremony.state && `, ${ceremony.state}`,
-    ceremony.zip && `, ${ceremony.zip}`,
-  ]
-    .filter(Boolean)
-    .join('')
-
   const advanceSlide = useCallback(() => {
     setActiveIndex((i) => (i + 1) % heroSlides.length)
   }, [heroSlides.length])
@@ -126,12 +117,7 @@ const Venue = () => {
 
         <div className="relative z-[1] text-sm sm:text-base md:text-lg font-albert text-white max-w-xl sm:max-w-2xl mx-auto leading-relaxed space-y-4">
           <p className="font-medium not-italic">
-            Ceremony: {ceremony.time}{' '}
-            <span className="font-light opacity-90">&amp;</span> Venue: {reception.time}
-            <span className="font-light"> – {ceremony.name}</span>
-            {addressLine ? (
-              <span className="font-light opacity-95"> ({addressLine})</span>
-            ) : null}
+            Ceremony: 3:30 PM <span className="font-light opacity-90">|</span> Reception: 6:00 PM
           </p>
         </div>
 

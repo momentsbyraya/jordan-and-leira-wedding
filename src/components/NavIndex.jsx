@@ -198,7 +198,7 @@ const NavIndex = ({ onOpenRSVP }) => {
       
       <div 
         ref={navRef}
-        className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10"
+        className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 bg-[#0B1F3A]"
       >
 
         {/* Container 2: Rest of the Content */}

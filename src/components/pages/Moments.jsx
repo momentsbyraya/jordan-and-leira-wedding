@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, Play, Heart, BookOpen } from 'lucide-react'
 import { useAudio } from '../../contexts/AudioContext'
-import GradientLayer from '../GradientLayer'
 import PhotoSection from '../PhotoSection'
 import { loveStory } from '../../data'
 
@@ -498,10 +497,7 @@ const Moments = () => {
         />
         
         {/* Image Banner — title sits outside fixed-height layer so ascenders aren’t clipped */}
-        <div
-          className="relative z-30 w-screen overflow-visible -mt-10 sm:-mt-12"
-          style={{ width: '100vw' }}
-        >
+        <div className="relative z-30 w-full max-w-full overflow-visible -mt-10 sm:-mt-12">
           <div className="relative w-full h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
             <img 
               src="/assets/images/prenup/HAN_2480 copy (1).jpg"
@@ -513,30 +509,15 @@ const Moments = () => {
               className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-36 sm:h-40 bg-gradient-to-b from-black/45 via-black/20 to-transparent"
               aria-hidden
             />
-            {/* Soft transparent white gradient layers at bottom */}
-            <GradientLayer height="h-32" opacity={0.7} gradientId="whiteGradient1" />
-            <GradientLayer height="h-24" opacity={0.5} gradientId="whiteGradient2" />
-            <GradientLayer height="h-12" opacity={0.4} gradientId="whiteGradient3" />
-            <GradientLayer height="h-8" opacity={0.3} gradientId="whiteGradient4" />
-            <GradientLayer height="h-6" opacity={0.25} gradientId="whiteGradient5" />
-            <GradientLayer height="h-4" opacity={0.2} gradientId="whiteGradient6" />
-            
-            {/* Solid transition SVG at bottom */}
-            <svg 
-              className="absolute bottom-0 left-0 w-full h-[12px] pointer-events-none z-[2]"
-              preserveAspectRatio="none"
-              viewBox="0 0 1200 12"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="solidTransitionMoments" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(255, 255, 255, 0.8)" />
-                  <stop offset="50%" stopColor="rgba(255, 255, 255, 0.95)" />
-                  <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
-                </linearGradient>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#solidTransitionMoments)" />
-            </svg>
+            {/* Navy bottom fade + cream tail (matches Details ImageBanner — no white band) */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-36 md:h-40 bg-gradient-to-b from-transparent via-[#0B1F3A]/55 to-[#0B1F3A]"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-14 sm:h-16 bg-gradient-to-b from-transparent to-[#FDF6F0]"
+              aria-hidden
+            />
           </div>
 
           {/* Our Love Story — sibling layer above image stack; paints on top */}
@@ -571,7 +552,7 @@ const Moments = () => {
         </div>
         
         {/* Love Story Section */}
-        <div className="relative z-20 w-full flex flex-col items-center bg-[#FDF6F0] py-12">
+        <div className="relative z-20 w-full flex flex-col items-center bg-[#FDF6F0] pt-4 sm:pt-6 pb-12">
           <div ref={firstParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16">
             {loveStory.summary && (
               <div className="mb-10 flex flex-col items-center gap-3">
