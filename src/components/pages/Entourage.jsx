@@ -456,7 +456,7 @@ const Entourage = () => {
             {principalSponsors && (
               <div ref={principalSponsorsRef} className="mb-10">
                 <h3 className="text-xl sm:text-2xl imperial-script-regular mb-2 text-center capitalize" style={{ color: '#CC5500' }}>To Stand as Witnesses to Our Vows</h3>
-                <h3 className="text-xl sm:text-2xl imperial-script-regular mb-6 text-center capitalize" style={{ color: '#CC5500' }}>Principal Sponsors</h3>
+                <h3 className="text-xl sm:text-2xl imperial-script-regular mb-6 text-center" style={{ color: '#CC5500' }}>Principal sponsors</h3>
                 <div className="flex flex-row gap-8 sm:gap-10 justify-center items-start max-w-3xl mx-auto">
                   {/* NINANG Column */}
                   <div className="flex-1">
@@ -517,7 +517,7 @@ const Entourage = () => {
                     const brideName = secondarySponsors.bridesmaid?.[index]
                     return (
                       <p key={index} className="text-sm sm:text-base md:text-lg lg:text-xl font-poppins text-[#0B1F3A]">
-                        {groomName && brideName ? `${groomName} - ${brideName}` : (groomName || brideName)}
+                        {groomName && brideName ? `${groomName} – ${brideName}` : (groomName || brideName)}
                       </p>
                     )
                   })}
@@ -546,7 +546,7 @@ const Entourage = () => {
                 {entourage.ceremonyRoles.veil?.length > 0 && (
                   <div>
                     <h3 className="text-xl sm:text-2xl imperial-script-regular mb-1 text-center capitalize" style={{ color: '#CC5500' }}>Veil</h3>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl alice-regular mb-2" style={{ color: '#CC5500' }}>To cloth us as one</p>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl alice-regular mb-2" style={{ color: '#CC5500' }}>To clothe us as one</p>
                     <div className="space-y-2 text-center">
                       {entourage.ceremonyRoles.veil.map((line, index) => (
                         <p key={index} className="text-sm sm:text-base md:text-lg lg:text-xl font-poppins text-[#0B1F3A]">
