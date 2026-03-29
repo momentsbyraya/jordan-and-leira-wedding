@@ -18,9 +18,19 @@
   }
 }
 
+.preloader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
 .preloader span {
   --c: #CC5500;
   position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
   display: block;
   height: 64px;
   width: 64px;
@@ -29,14 +39,19 @@
   border-radius: 100%;
 }
 
+/* Upper lobes — translate must stay in every keyframe or the heart breaks */
 .preloader span:nth-child(1) {
   transform: translate(-28px, -28px);
   animation: shape_1 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
 }
 
 @keyframes shape_1 {
+  0%,
+  100% {
+    transform: translate(-28px, -28px) scale(1);
+  }
   60% {
-    transform: scale(0.4);
+    transform: translate(-28px, -28px) scale(0.4);
   }
 }
 
@@ -46,25 +61,31 @@
 }
 
 @keyframes shape_2 {
+  0%,
+  100% {
+    transform: translate(28px, -28px) scale(1);
+  }
   40% {
-    transform: scale(0.4);
+    transform: translate(28px, -28px) scale(0.4);
   }
 }
 
+/* Bottom point: square rotated 45° (classic CSS heart) */
 .preloader span:nth-child(3) {
-  position: relative;
-  border-radius: 0px;
+  border-radius: 0;
   transform: scale(0.98) rotate(-45deg);
   animation: shape_3 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
 }
 
 @keyframes shape_3 {
+  0%,
+  100% {
+    border-radius: 0;
+    transform: scale(0.98) rotate(-45deg);
+  }
   50% {
     border-radius: 100%;
     transform: scale(0.5) rotate(-45deg);
-  }
-  100% {
-    transform: scale(0.98) rotate(-45deg);
   }
 }
 
@@ -85,6 +106,6 @@
 @keyframes shadow {
   50% {
     transform: translateX(-50%) scale(0.5);
-    border-color: #A84400;
+    border-color: #a84400;
   }
 }

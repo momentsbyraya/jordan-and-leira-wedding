@@ -7,7 +7,8 @@ import { couple } from '../data'
 
 const RSVPModal = ({ isOpen, onClose }) => {
   const rsvp = couple.rsvp
-  const deadlineNote = rsvp?.message ?? 'Please RSVP by May 30, 2026'
+  const formUrl = rsvp?.formUrl ?? ''
+  const formEmbedUrl = rsvp?.formEmbedUrl ?? ''
   const modalRef = useRef(null)
   const overlayRef = useRef(null)
   const contentRef = useRef(null)
@@ -16,18 +17,18 @@ const RSVPModal = ({ isOpen, onClose }) => {
     if (isOpen) {
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden'
-      
+
       // Modal entrance animation
       gsap.set([overlayRef.current, contentRef.current], { opacity: 0 })
       gsap.set(contentRef.current, { scale: 0.8, y: 50 })
-      
-      gsap.to(overlayRef.current, { opacity: 1, duration: 0.3, ease: "power2.out" })
-      gsap.to(contentRef.current, { 
-        opacity: 1, 
-        scale: 1, 
-        y: 0, 
-        duration: 0.4, 
-        ease: "back.out(1.7)" 
+
+      gsap.to(overlayRef.current, { opacity: 1, duration: 0.3, ease: 'power2.out' })
+      gsap.to(contentRef.current, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'back.out(1.7)',
       })
     } else {
       // Re-enable body scroll when modal is closed
@@ -42,16 +43,18 @@ const RSVPModal = ({ isOpen, onClose }) => {
 
   const handleClose = () => {
     // Modal exit animation
-    gsap.to(overlayRef.current, { opacity: 0, duration: 0.2, ease: "power2.out" })
-    gsap.to(contentRef.current, { 
-      opacity: 0, 
-      scale: 0.8, 
-      y: 50, 
-      duration: 0.3, 
-      ease: "power2.out" 
-    }).then(() => {
-      onClose()
-    })
+    gsap.to(overlayRef.current, { opacity: 0, duration: 0.2, ease: 'power2.out' })
+    gsap
+      .to(contentRef.current, {
+        opacity: 0,
+        scale: 0.8,
+        y: 50,
+        duration: 0.3,
+        ease: 'power2.out',
+      })
+      .then(() => {
+        onClose()
+      })
   }
 
   const handleOverlayClick = (e) => {
@@ -63,7 +66,7 @@ const RSVPModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
   return createPortal(
-    <div 
+    <div
       ref={modalRef}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
@@ -74,34 +77,50 @@ const RSVPModal = ({ isOpen, onClose }) => {
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={handleOverlayClick}
       />
-      
+
       {/* Modal Content */}
       <div
         ref={contentRef}
-        className={`relative ${themeConfig.paragraph.background} rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden`}
+        className={`relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl shadow-2xl ${themeConfig.paragraph.background}`}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-300/50">
+        <div className="flex shrink-0 items-center justify-between border-b border-gray-300/50 px-6 py-4">
           <h2 className="text-2xl font-leckerli font-light text-[#0B1F3A]/70">RSVP</h2>
           <button
+            type="button"
             onClick={handleClose}
-            className="p-2 text-[#5A6B7C] hover:text-[#0B1F3A] hover:bg-gray-200/50 rounded-full transition-colors duration-200"
+            className="p-2 text-[#5A6B7C] transition-colors duration-200 hover:bg-gray-200/50 hover:text-[#0B1F3A] rounded-full"
+            aria-label="Close"
           >
-            <X className="w-6 h-6" />
+            <X className="h-6 w-6" />
           </button>
         </div>
-        
-        {/* Content */}
-        <div className="p-6 pt-2">
-          {deadlineNote && (
-            <p className="text-center text-sm sm:text-base text-[#5A6B7C] mb-4 font-poppins">
-              {deadlineNote}
-            </p>
-          )}
-          <div className="flex min-h-[280px] sm:min-h-[360px] w-full items-center justify-center rounded-lg border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/80 px-6 py-16">
-            <p className="text-center font-tebranos text-2xl sm:text-3xl tracking-wide text-[#0B1F3A]/80">
-              TO BE ADDED
-            </p>
+
+        <div className="flex min-h-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1 overflow-auto border-b border-gray-300/50 bg-white">
+            {formEmbedUrl ? (
+              <iframe
+                title="Wedding RSVP form"
+                src={formEmbedUrl}
+                className="block h-[min(72vh,880px)] min-h-[480px] w-full border-0"
+              />
+            ) : (
+              <p className="p-8 text-center font-poppins text-[#5A6B7C]">
+                RSVP form link is not configured.
+              </p>
+            )}
+          </div>
+
+          <div className="flex shrink-0 justify-center px-4 py-4">
+            {formUrl ? (
+              <a
+                href={formUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg border border-[#CC5500] bg-[#FDF6F0] px-6 py-3 text-sm font-medium text-[#CC5500] transition-colors hover:bg-[#CC5500]/10"
+              >
+                Open Link on other browser
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
@@ -110,4 +129,4 @@ const RSVPModal = ({ isOpen, onClose }) => {
   )
 }
 
-export default RSVPModal 
+export default RSVPModal
