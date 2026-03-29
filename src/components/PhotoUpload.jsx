@@ -59,11 +59,23 @@ const PhotoUpload = () => {
               {/* QR Code Image - 50% width on mobile, full width on 992px+ */}
               <div className="w-1/2 lg-custom:w-full lg-custom:flex lg-custom:justify-center">
                 <div className="w-full relative upload-qr-container" style={{ maxWidth: '350px' }}>
-                  <div className="flex min-h-[200px] w-full items-center justify-center rounded-lg border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/80 p-6 shadow-sm sm:min-h-[240px]">
-                    <p className="text-center font-tebranos text-xl sm:text-2xl tracking-wide text-[#0B1F3A]/80">
-                      TO BE ADDED
-                    </p>
-                  </div>
+                  <a
+                    href="https://drive.google.com/drive/folders/1e_PE5xsmeIHFUZFzb8P3uFfLuyvHWgS2?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-lg border border-[#0B1F3A]/10 bg-white p-3 shadow-sm outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-[#0B1F3A] focus-visible:ring-offset-2"
+                    aria-label="Open photo upload folder (QR code)"
+                  >
+                    <img
+                      src="/assets/images/qr/qr-code (3).png"
+                      alt=""
+                      className="h-auto w-full object-contain"
+                      width={350}
+                      height={350}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
                 </div>
               </div>
               
@@ -77,7 +89,7 @@ const PhotoUpload = () => {
                 {/* Upload Button */}
                 <div className="flex justify-start lg-custom:justify-center items-center">
                   <SecondaryButton
-                    href="https://drive.google.com/drive/folders/1wEU4WKIRjYC0o5t3NlnNiboQUNmH5nN_?usp=sharing"
+                    href="https://drive.google.com/drive/folders/1e_PE5xsmeIHFUZFzb8P3uFfLuyvHWgS2?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     icon={ArrowRight}

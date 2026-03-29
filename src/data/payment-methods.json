@@ -2,13 +2,23 @@
   "paymentMethods": [
     {
       "name": "Bank of the Philippine Islands",
-      "image": "/assets/images/monetary-gifts/BPIQR_BPI.png",
+      "image": "/assets/images/monetary-gifts/bpi.png",
       "accountInfo": {
         "provider": "BPI",
         "accountNumber": "",
         "accountName": "",
-        "qrCode": "/assets/images/monetary-gifts/BPIQR_BPI.png"
+        "qrCode": "/assets/images/monetary-gifts/bpi.png"
+      }
+    },
+    {
+      "name": "MariBank",
+      "image": "/assets/images/monetary-gifts/maribank.png",
+      "accountInfo": {
+        "provider": "MariBank",
+        "accountNumber": "",
+        "accountName": "",
+        "qrCode": "/assets/images/monetary-gifts/maribank.png"
       }
     }
   ]
-} 
+}

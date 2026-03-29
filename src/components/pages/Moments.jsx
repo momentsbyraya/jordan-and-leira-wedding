@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, Play, Heart, BookOpen } from 'lucide-react'
 import { useAudio } from '../../contexts/AudioContext'
 import PhotoSection from '../PhotoSection'
-import { loveStory } from '../../data'
+import { loveStory, couple } from '../../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -533,7 +533,7 @@ const Moments = () => {
                   filter: 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5))',
                 }}
               >
-                Our
+                {couple.groom.firstName} & {couple.bride.firstName}
               </h1>
               <h2
                 className="font-tebranos text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase -mt-3 sm:-mt-4 md:-mt-5 leading-none overflow-visible"

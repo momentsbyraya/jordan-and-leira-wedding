@@ -9,18 +9,22 @@
   },
   "parents": {
     "groom": {
-      "lines": [
+      "parentsNames": [
         "Mr. Ricardo Paler Paquinol",
-        "and the Late Mrs. Joybell Rempos Paquinol ✝️",
+        "The Late Mrs. Joybell Rempos Paquinol ✝"
+      ],
+      "lines": [
         "Represented by",
         "Shechem Paquinol Sulatorio",
         "Sister of the Groom"
       ]
     },
     "bride": {
+      "parentsNames": [
+        "The Late Mr. Ariel Enriquez Angel ✝",
+        "Mrs. Lani Fernando Angel"
+      ],
       "lines": [
-        "The Late Mr. Ariel Enriquez Angel ✝️",
-        "and Mrs. Lani Fernando Angel",
         "Escorted by",
         "Arlan Reyniel Fernando Angel",
         "Brother of the Bride"
@@ -37,7 +41,7 @@
         "Eileen Q. Tejano",
         "Erlinda F. Rectra",
         "Lorie A. Paquinol",
-        "Erlina G. Paquinol",
+        "Erlinda Paquinol",
         "Mari Chandris U. Barbaza",
         "Lilibeth F. Bustamante",
         "Arsenia D. Estinos",
@@ -97,16 +101,16 @@
   ],
   "ceremonyRoles": {
     "cord": [
-      "Aaron Christopher C. Ilusorio and Jeunne Ivy D. Angel",
-      "Denielle Q. Samson and Thomas Joseph G. Dela Cruz"
+      ["Aaron Christopher C. Ilusorio", "Jeunne Ivy D. Angel"],
+      ["Thomas Joseph G. Dela Cruz", "Denielle Q. Samson"]
     ],
     "veil": [
-      "Louie L. Leron and Aira M. Leron",
-      "Kervin Karlo A. Francisco and Jana M. Sta. Teresa"
+      ["Louie L. Leron", "Aira M. Leron"],
+      ["Kervin Karlo A. Francisco", "Jana M. Sta. Teresa"]
     ],
     "candle": [
-      "Lindsay Anne S. Espiritu and Jezer E. De Vera",
-      "Rowell M. Lanada and Gellaine L. Fernando"
+      ["Jezer E. De Vera", "Lindsay Anne S. Espiritu"],
+      ["Rowell M. Lanada", "Gellaine L. Fernando"]
     ]
   },
   "banners": {

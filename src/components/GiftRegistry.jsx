@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, X } from 'lucide-react'
+import { paymentMethods } from '../data'
 import './pages/Details.css'
 
 // Register ScrollTrigger plugin
@@ -77,25 +78,39 @@ const GiftRegistry = () => {
           />
           
           {/* Modal Content */}
-          <div className="relative bg-[#FDF6F0] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Header */}
-            <div className="sticky top-0 bg-[#FDF6F0] z-10 flex items-center justify-between p-6 border-b border-gray-200 rounded-t-2xl">
-              <h3 className="text-2xl sm:text-3xl alice-regular font-black text-[#0B1F3A] modal-methods-title">Methods</h3>
+          <div className="relative flex max-h-[92vh] w-[min(96vw,1100px)] flex-col overflow-hidden rounded-2xl bg-[#FDF6F0]">
+            {/* Close only */}
+            <div className="absolute right-3 top-3 z-10 sm:right-4 sm:top-4">
               <button
+                type="button"
                 onClick={() => setIsGiftModalOpen(false)}
-                className="text-gray-500 hover:text-[#0B1F3A] transition-colors duration-200"
+                className="rounded-full bg-[#FDF6F0]/90 p-2 text-gray-600 shadow-sm ring-1 ring-[#0B1F3A]/10 hover:text-[#0B1F3A]"
+                aria-label="Close"
               >
-                <X className="w-6 h-6" />
+                <X className="h-6 w-6" />
               </button>
             </div>
 
-            {/* Content */}
-            <div className="p-6">
-              <div className="flex min-h-[280px] sm:min-h-[360px] w-full items-center justify-center rounded-xl border border-dashed border-[#AAB7C4]/60 bg-[#FDF6F0]/50 px-6 py-16">
-                <p className="text-center font-tebranos text-2xl sm:text-3xl tracking-wide text-[#0B1F3A]/80">
-                  TO BE ADDED
-                </p>
-              </div>
+            {/* QR grid — maximize image area */}
+            <div className="grid min-h-[min(72vh,640px)] grid-cols-1 gap-3 p-3 pt-14 sm:min-h-[min(80vh,720px)] sm:grid-cols-2 sm:gap-4 sm:p-4 sm:pt-4">
+              {paymentMethods.paymentMethods?.map((method, index) => {
+                const src = method.image || method.accountInfo?.qrCode
+                if (!src) return null
+                return (
+                  <div
+                    key={index}
+                    className="flex min-h-[min(64vh,480px)] items-center justify-center rounded-xl bg-white p-2 sm:min-h-0 sm:h-full sm:p-3"
+                  >
+                    <img
+                      src={src}
+                      alt={`${method.name} QR code`}
+                      className="max-h-[min(62vh,560px)] w-full max-w-full object-contain sm:max-h-[min(74vh,640px)]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>,

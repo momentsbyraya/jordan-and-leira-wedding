@@ -7,7 +7,6 @@ import RSVPModal from './components/RSVPModal'
 import DynamicTitle from './components/DynamicTitle'
 import OpeningScreen from './components/OpeningScreen'
 import Loader from './components/Loader'
-import Watermark from './components/Watermark'
 import ScrollToTop from './components/ScrollToTop'
 import Details from './components/pages/Details'
 import Entourage from './components/pages/Entourage'
@@ -31,7 +30,7 @@ function AppContent() {
         '/assets/images/prenup/HAN_5426 copy.jpg',        // Moments polaroid 1
         '/assets/images/prenup/HAN_1954 copy.jpg',        // Moments polaroid 2
         // NavIndex graphics - all decorative elements
-        '/assets/images/graphics/for envelopes (13).png',
+        '/assets/images/graphics/for envelopes (14).png',
         '/assets/images/graphics/flower-1.png',
         '/assets/images/graphics/flower-3.png',
         '/assets/images/graphics/flower-4.png',
@@ -130,7 +129,6 @@ function AppContent() {
   return (
     <div className="App min-h-screen wedding-gradient">
       <DynamicTitle />
-      <Watermark />
       <ScrollToTop />
       {/* Loader - shows while preloading */}
       {isLoading && (
