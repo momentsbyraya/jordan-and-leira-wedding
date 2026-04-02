@@ -60,14 +60,14 @@ const PhotoUpload = () => {
               <div className="w-1/2 lg-custom:w-full lg-custom:flex lg-custom:justify-center">
                 <div className="w-full relative upload-qr-container" style={{ maxWidth: '350px' }}>
                   <a
-                    href="https://drive.google.com/drive/folders/1e_PE5xsmeIHFUZFzb8P3uFfLuyvHWgS2?usp=drive_link"
+                    href="https://drive.google.com/drive/folders/12h2rkEYwkOlVxjkSI0LZcTC_vce6LThd?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block rounded-lg border border-[#0B1F3A]/10 bg-white p-3 shadow-sm outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-[#0B1F3A] focus-visible:ring-offset-2"
                     aria-label="Open photo upload folder (QR code)"
                   >
                     <img
-                      src="/assets/images/qr/qr-code (3).png"
+                      src="/assets/images/qr/qr-code%20(4).png"
                       alt=""
                       className="h-auto w-full object-contain"
                       width={350}
@@ -89,12 +89,12 @@ const PhotoUpload = () => {
                 {/* Upload Button */}
                 <div className="flex justify-start lg-custom:justify-center items-center">
                   <SecondaryButton
-                    href="https://drive.google.com/drive/folders/1e_PE5xsmeIHFUZFzb8P3uFfLuyvHWgS2?usp=drive_link"
+                    href="https://drive.google.com/drive/folders/12h2rkEYwkOlVxjkSI0LZcTC_vce6LThd?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     icon={ArrowRight}
                   >
-                    Upload Photos
+                    Upload photos
                   </SecondaryButton>
                 </div>
               </div>

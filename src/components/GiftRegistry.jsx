@@ -77,9 +77,8 @@ const GiftRegistry = () => {
             onClick={() => setIsGiftModalOpen(false)}
           />
           
-          {/* Modal Content */}
-          <div className="relative flex max-h-[92vh] w-[min(96vw,1100px)] flex-col overflow-hidden rounded-2xl bg-[#FDF6F0]">
-            {/* Close only */}
+          {/* Modal shell: fixed height cap; inner panel scrolls (fixes mobile / overflow) */}
+          <div className="relative flex max-h-[92vh] w-[min(96vw,1100px)] flex-col overflow-hidden rounded-2xl bg-[#FDF6F0] shadow-xl">
             <div className="absolute right-3 top-3 z-10 sm:right-4 sm:top-4">
               <button
                 type="button"
@@ -91,26 +90,27 @@ const GiftRegistry = () => {
               </button>
             </div>
 
-            {/* QR grid — maximize image area */}
-            <div className="grid min-h-[min(72vh,640px)] grid-cols-1 gap-3 p-3 pt-14 sm:min-h-[min(80vh,720px)] sm:grid-cols-2 sm:gap-4 sm:p-4 sm:pt-4">
-              {paymentMethods.paymentMethods?.map((method, index) => {
-                const src = method.image || method.accountInfo?.qrCode
-                if (!src) return null
-                return (
-                  <div
-                    key={index}
-                    className="flex min-h-[min(64vh,480px)] items-center justify-center rounded-xl bg-white p-2 sm:min-h-0 sm:h-full sm:p-3"
-                  >
-                    <img
-                      src={src}
-                      alt={`${method.name} QR code`}
-                      className="max-h-[min(62vh,560px)] w-full max-w-full object-contain sm:max-h-[min(74vh,640px)]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                )
-              })}
+            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain p-3 pt-14 touch-pan-y sm:p-4 sm:pt-16 [-webkit-overflow-scrolling:touch]">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                {paymentMethods.paymentMethods?.map((method, index) => {
+                  const src = method.image || method.accountInfo?.qrCode
+                  if (!src) return null
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center justify-center rounded-xl bg-white p-2 sm:p-3"
+                    >
+                      <img
+                        src={src}
+                        alt={`${method.name} QR code`}
+                        className="max-h-[50vh] w-full max-w-full object-contain sm:max-h-[min(70vh,620px)]"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>,

@@ -121,6 +121,13 @@
   margin-bottom: 2.5vw;
   margin-top: -13vw;
   margin-left: 0.83vw;
+  /* Let clicks reach "OUR MOMENTS" / polaroids below when this row overlaps them */
+  pointer-events: none;
+}
+
+.rsvp-details-container .rsvp-container,
+.rsvp-details-container .details-container {
+  pointer-events: auto;
 }
 
 /* RSVP Container */
@@ -236,7 +243,7 @@
   padding-left: 1vw;
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
-  z-index: 1000;
+  z-index: 1200;
   pointer-events: auto;
   user-select: none;
   cursor: pointer;

@@ -497,25 +497,25 @@ const Moments = () => {
         />
         
         {/* Image Banner — title sits outside fixed-height layer so ascenders aren’t clipped */}
-        <div className="relative z-30 w-full max-w-full overflow-visible -mt-10 sm:-mt-12">
-          <div className="relative w-full h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
+        <div className="relative z-30 w-full max-w-full overflow-visible -mt-10 sm:-mt-12 lg:left-1/2 lg:w-screen lg:max-w-none lg:-translate-x-1/2">
+          <div className="relative w-full h-[250px] sm:h-[250px] md:h-[300px] lg:h-screen lg:min-h-screen overflow-hidden">
             <img 
               src="/assets/images/prenup/HAN_2480 copy (1).jpg"
               alt="Moments banner"
-              className="w-full h-full object-cover object-[50%_58%] sm:object-[50%_56%] md:object-[50%_54%] lg:object-[50%_52%]"
+              className="w-full h-full object-cover object-[50%_66%]"
             />
-            {/* Readability behind top title (stays under typography) */}
+            {/* Readability behind top title (stays under typography) — match Details depths on web */}
             <div
-              className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-36 sm:h-40 bg-gradient-to-b from-black/45 via-black/20 to-transparent"
+              className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-36 sm:h-40 bg-gradient-to-b from-black/45 via-black/20 to-transparent lg:h-[min(32vh,320px)]"
               aria-hidden
             />
-            {/* Navy bottom fade + cream tail (exactly same as Details ImageBanner) */}
+            {/* Navy bottom fade + cream tail (same as Details ImageBanner) */}
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 sm:h-36 md:h-40 bg-gradient-to-b from-transparent via-[#0B1F3A]/55 to-[#0B1F3A]"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 sm:h-36 md:h-40 bg-gradient-to-b from-transparent via-[#0B1F3A]/55 to-[#0B1F3A] lg:h-[min(40vh,420px)]"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-14 sm:h-16 bg-gradient-to-b from-transparent to-[#FDF6F0]"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-14 sm:h-16 bg-gradient-to-b from-transparent to-[#FDF6F0] lg:h-28"
               aria-hidden
             />
           </div>
@@ -524,7 +524,7 @@ const Moments = () => {
           <div className="pointer-events-none absolute left-0 right-0 top-0 z-[60] flex flex-col items-center overflow-visible pt-3 sm:pt-4 md:pt-5">
             <div className="w-full max-w-full text-center px-4 overflow-visible">
               <h1
-                className="font-ballet text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-1 sm:mb-0 overflow-visible leading-[1.15] pt-1"
+                className="font-ballet text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-1 sm:mb-0 overflow-visible leading-[1.15] pt-1"
                 style={{
                   background: 'linear-gradient(180deg, #FFF8E7 0%, #E8C547 38%, #C9A227 72%, #A67C00 100%)',
                   WebkitBackgroundClip: 'text',
@@ -533,10 +533,10 @@ const Moments = () => {
                   filter: 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5))',
                 }}
               >
-                {couple.groom.firstName} & {couple.bride.firstName}
+                Our
               </h1>
               <h2
-                className="font-tebranos text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase -mt-3 sm:-mt-4 md:-mt-5 leading-none overflow-visible"
+                className="font-tebranos text-5xl sm:text-6xl md:text-8xl lg:text-9xl uppercase -mt-2 sm:-mt-3 md:-mt-5 leading-none overflow-visible"
                 style={{
                   background: 'linear-gradient(180deg, #FFF8E7 0%, #E8C547 35%, #C9A227 70%, #8B6914 100%)',
                   WebkitBackgroundClip: 'text',

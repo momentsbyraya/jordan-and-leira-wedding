@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { couple } from '../data'
 import Counter from './Counter'
@@ -188,6 +188,30 @@ const NavIndex = ({ onOpenRSVP }) => {
     }
   }
 
+  const goToMoments = (e) => {
+    if (e?.preventDefault) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+      if (e.button !== 0) return
+      e.preventDefault()
+    }
+    window.scrollTo(0, 0)
+    if (navRef.current) {
+      gsap.to(navRef.current, {
+        x: '-100%',
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.in',
+        onComplete: () => {
+          navigate('/moments')
+          setTimeout(() => window.scrollTo(0, 0), 0)
+        }
+      })
+    } else {
+      navigate('/moments')
+      setTimeout(() => window.scrollTo(0, 0), 0)
+    }
+  }
+
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#0B1F3A] overflow-hidden relative">
       {/* Background Image */}
@@ -266,25 +290,7 @@ const NavIndex = ({ onOpenRSVP }) => {
           {/* Polaroid Container Wrapper */}
           <div 
             className="relative cursor-pointer hover:scale-105 transition-transform duration-300 polaroid-wrapper"
-            onClick={() => {
-              window.scrollTo(0, 0)
-              // Slide out animation before navigation
-              if (navRef.current) {
-                gsap.to(navRef.current, {
-                  x: '-100%',
-                  opacity: 0,
-                  duration: 0.5,
-                  ease: "power2.in",
-                  onComplete: () => {
-                    navigate('/moments')
-                    setTimeout(() => window.scrollTo(0, 0), 0)
-                  }
-                })
-              } else {
-                navigate('/moments')
-                setTimeout(() => window.scrollTo(0, 0), 0)
-              }
-            }}
+            onClick={goToMoments}
           >
             {/* Flower 4 - Top Right (under the image and container) */}
             <img 
@@ -411,70 +417,10 @@ const NavIndex = ({ onOpenRSVP }) => {
             className="absolute h-auto object-contain flower-7"
           />
           
-          {/* VIEW OUR MOMENTS Text - Top Right */}
-          <button
-            ref={momentsTextRef}
-            type="button"
-            className="absolute cursor-pointer hover:opacity-80 transition-opacity duration-300 bg-transparent border-none outline-none moments-text-button"
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              console.log('OUR MOMENTS clicked, navigating to /moments')
-              // Slide out animation before navigation
-              if (navRef.current) {
-                gsap.to(navRef.current, {
-                  x: '-100%',
-                  opacity: 0,
-                  duration: 0.5,
-                  ease: "power2.in",
-                  onComplete: () => {
-                    console.log('Animation complete, navigating...')
-                    try {
-                      navigate('/moments')
-                    } catch (error) {
-                      console.error('Navigation error:', error)
-                      window.location.href = '/moments'
-                    }
-                  }
-                })
-              } else {
-                console.log('No navRef, navigating directly...')
-                try {
-                  navigate('/moments')
-                } catch (error) {
-                  console.error('Navigation error:', error)
-                  window.location.href = '/moments'
-                }
-              }
-            }}
-          >
-             <span className="nanum-myeongjo-regular text-center underline pulsating-moments moments-text">
-               OUR MOMENTS
-             </span>
-          </button>
-          
           {/* Polaroid Image 1 */}
           <div 
             className="relative cursor-pointer hover:scale-105 transition-transform duration-300 polaroid-1"
-            onClick={() => {
-              window.scrollTo(0, 0)
-              // Slide out animation before navigation
-              if (navRef.current) {
-                gsap.to(navRef.current, {
-                  x: '-100%',
-                  opacity: 0,
-                  duration: 0.5,
-                  ease: "power2.in",
-                  onComplete: () => {
-                    navigate('/moments')
-                    setTimeout(() => window.scrollTo(0, 0), 0)
-                  }
-                })
-              } else {
-                navigate('/moments')
-                setTimeout(() => window.scrollTo(0, 0), 0)
-              }
-            }}
+            onClick={goToMoments}
           >
             <div className="bg-[#FDF6F0] relative polaroid-1-container">
               <img 
@@ -488,25 +434,7 @@ const NavIndex = ({ onOpenRSVP }) => {
           {/* Polaroid Image 2 */}
           <div 
             className="relative cursor-pointer hover:scale-105 transition-transform duration-300 polaroid-2"
-            onClick={() => {
-              window.scrollTo(0, 0)
-              // Slide out animation before navigation
-              if (navRef.current) {
-                gsap.to(navRef.current, {
-                  x: '-100%',
-                  opacity: 0,
-                  duration: 0.5,
-                  ease: "power2.in",
-                  onComplete: () => {
-                    navigate('/moments')
-                    setTimeout(() => window.scrollTo(0, 0), 0)
-                  }
-                })
-              } else {
-                navigate('/moments')
-                setTimeout(() => window.scrollTo(0, 0), 0)
-              }
-            }}
+            onClick={goToMoments}
           >
             <div className="bg-[#FDF6F0] relative polaroid-2-container">
               <img 
@@ -523,6 +451,19 @@ const NavIndex = ({ onOpenRSVP }) => {
               />
             </div>
           </div>
+
+          {/* OUR MOMENTS — last in stack so link stays above polaroids; real URL for a11y / open in new tab */}
+          <Link
+            ref={momentsTextRef}
+            to="/moments"
+            className="absolute bg-transparent border-none outline-none cursor-pointer hover:opacity-80 transition-opacity duration-300 moments-text-button"
+            onClick={goToMoments}
+            aria-label="View our moments gallery"
+          >
+            <span className="nanum-myeongjo-regular text-center underline pulsating-moments moments-text">
+              OUR MOMENTS
+            </span>
+          </Link>
         </div>
 
           {/* Navigation Boxes Grid */}
