@@ -540,22 +540,22 @@ const Entourage = () => {
                 <h3 className="text-xl sm:text-2xl imperial-script-regular mb-2 text-center capitalize" style={{ color: '#CC5500' }}>To Stand as Witnesses to Our Vows</h3>
                 <h3 className="text-xl sm:text-2xl imperial-script-regular mb-6 text-center" style={{ color: '#CC5500' }}>Principal Sponsors</h3>
                 <div className="flex flex-row gap-8 sm:gap-10 justify-center items-start max-w-3xl mx-auto">
-                  {/* NINONG Column */}
+                  {/* NINANG Column */}
                   <div className="flex-1">
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl alice-regular mb-2 text-center uppercase" style={{ color: '#CC5500' }}>Ninong</p>
                     <div className="space-y-2">
-                      {principalSponsors.ninong && principalSponsors.ninong.map((name, index) => (
+                      {principalSponsors.ninang && principalSponsors.ninang.map((name, index) => (
                         <p key={index} className="ninong-item text-sm sm:text-base md:text-lg lg:text-xl font-poppins text-[#0B1F3A] text-center">
                           {name}
                         </p>
                       ))}
                     </div>
                   </div>
-                  {/* NINANG Column */}
+                  {/* NINONG Column */}
                   <div className="flex-1">
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl alice-regular mb-2 text-center uppercase" style={{ color: '#CC5500' }}>Ninang</p>
                     <div className="space-y-2">
-                      {principalSponsors.ninang && principalSponsors.ninang.map((name, index) => (
+                      {principalSponsors.ninong && principalSponsors.ninong.map((name, index) => (
                         <p key={index} className="ninang-item text-sm sm:text-base md:text-lg lg:text-xl font-poppins text-[#0B1F3A] text-center">
                           {name}
                         </p>
