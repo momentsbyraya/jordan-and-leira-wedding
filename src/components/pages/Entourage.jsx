@@ -532,6 +532,11 @@ const Entourage = () => {
                   </p>
                 ))}
               </div>
+
+              <div className="w-full max-w-2xl text-center">
+                <p className="text-xl sm:text-2xl imperial-script-regular mb-2 text-center capitalize" style={{ color: '#CC5500' }}>Officiating Minister</p>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-poppins text-[#0B1F3A]">Rev. Rogelio G. Fajardo Jr.</p>
+              </div>
             </div>
 
             {/* Principal Sponsors */}
